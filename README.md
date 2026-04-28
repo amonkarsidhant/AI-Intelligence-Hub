@@ -4,6 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-dashboard-111827?logo=flask&logoColor=white)
 ![Status](https://img.shields.io/badge/status-release%20candidate-f59e0b)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 AI Intelligence Hub is a lightweight open-source dashboard for tracking the AI ecosystem across GitHub, Hugging Face, research, video, and news sources.
 
@@ -229,3 +230,7 @@ This repo is actively evolving. Expect rapid iteration on data quality, workflow
 Issues and pull requests are welcome.
 
 If you are using the dashboard for research, engineering leadership, or internal AI scouting, open a feature request and describe the workflow you want to support.
+
+## License
+
+MIT. See `LICENSE`.
