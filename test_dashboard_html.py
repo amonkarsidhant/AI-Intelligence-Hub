@@ -31,7 +31,7 @@ def test_dashboard_contains_real_action_wiring(client, app_env):
 
     html = client.get("/").get_data(as_text=True)
 
-    assert "<script>" in html
+    assert "<script src=\"/static/app.js\"></script>" in html
     assert "Daily Trust State" in html
     assert "Refresh Now" in html
     assert "Open Today" not in html and "Daily Digest" in html
@@ -44,15 +44,8 @@ def test_dashboard_contains_real_action_wiring(client, app_env):
     assert "To Read" in html
     assert "Useful" in html
     assert "toast-container" in html
-    assert "showToast(" in html
-    assert "fetch('/api/refresh'" in html
-    assert "fetch('/api/save'" in html
-    assert "fetch('/api/ignore'" in html
-    assert "fetch('/api/track'" in html
-    assert "fetch('/api/saved/' + id" in html
-    assert "/api/saved//status" not in html
-    assert "/api/saved//notes" not in html
-    assert "/api/track/" not in html
+    assert 'id="live-status"' in html
+    assert 'id="dashboard-state"' in html
 
 
 def test_empty_state_is_helpful(empty_client):

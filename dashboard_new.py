@@ -4,6 +4,8 @@
 import json
 import os
 import sys
+import hashlib
+from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from flask import Flask, render_template, request, jsonify
 
@@ -407,11 +409,159 @@ def build_status_warning(source_cards):
     return ""
 
 
+def build_chart_payload(scored_data, saved_items, source_status_cards):
+    """Build chart data from live dashboard content instead of mock values."""
+    source_labels = [label for _, label in SOURCE_META]
+    source_map = {card.get("source_name"): card for card in source_status_cards}
+    status_scores = {"ok": 100, "cache": 70, "stale": 40, "failed": 10, "unknown": 0}
+
+    trust_values = []
+    new_values = []
+    signal_values = []
+    avg_signal_values = []
+
+    for source_name, _label in SOURCE_META:
+        source_items = scored_data.get(source_name, [])
+        source_card = source_map.get(source_name, {})
+        trust_values.append(status_scores.get(source_card.get("status_key", "unknown"), 0))
+        new_values.append(int(source_card.get("item_count") or len(source_items) or 0))
+        high_signal = [item for item in source_items if (item.get("signal_score") or 0) >= 60]
+        signal_values.append(len(high_signal))
+        if source_items:
+            avg_signal = sum(item.get("signal_score", 0) for item in source_items) / max(len(source_items), 1)
+            avg_signal_values.append(round(avg_signal, 1))
+        else:
+            avg_signal_values.append(0)
+
+    saved_status_counts = Counter(item.get("status") or "to_read" for item in saved_items)
+    saved_status_labels = [label for _, label in SAVED_STATUS_ORDER]
+    saved_status_values = [saved_status_counts.get(key, 0) for key, _ in SAVED_STATUS_ORDER]
+
+    max_items = max(new_values) if new_values else 0
+    normalized_volume = [round((value / max_items) * 100, 1) if max_items else 0 for value in new_values]
+
+    category_counts = Counter()
+    category_score_totals = defaultdict(int)
+    category_score_counts = defaultdict(int)
+    for source_name, _label in SOURCE_META:
+        for item in scored_data.get(source_name, []):
+            categories = item.get("categories") or ["Uncategorized"]
+            for raw_category in categories:
+                category = (raw_category or "Uncategorized").replace("-", " ").strip().title()
+                category_counts[category] += 1
+                category_score_totals[category] += int(item.get("signal_score") or 0)
+                category_score_counts[category] += 1
+
+    top_categories = category_counts.most_common(6)
+    category_labels = [name for name, _count in top_categories]
+    category_values = [count for _name, count in top_categories]
+    category_scores = [
+        round(category_score_totals[name] / max(category_score_counts[name], 1), 1)
+        for name, _count in top_categories
+    ]
+
+    status_axis = {
+        "to_read": 20,
+        "to_test": 40,
+        "testing": 60,
+        "useful": 80,
+        "discarded": 100,
+    }
+    source_bubbles = defaultdict(list)
+    for item in saved_items[:30]:
+        source_type = item.get("source_type") or "other"
+        tags = item.get("tags") or []
+        source_bubbles[source_type].append({
+            "x": int(item.get("signal_score") or 0),
+            "y": status_axis.get(item.get("status") or "to_read", 20),
+            "r": min(18, max(6, 6 + len(tags) * 2 + (4 if item.get("notes") else 0))),
+            "title": item.get("title", "Saved item"),
+            "status": item.get("status", "to_read"),
+            "source": item.get("source", source_type),
+        })
+
+    source_activity_statuses = [
+        source_map.get(source_name, {}).get("status_label", "Unknown")
+        for source_name, _label in SOURCE_META
+    ]
+
+    return {
+        "sparklines": {
+            "trust": {"labels": source_labels, "values": trust_values},
+            "new": {"labels": source_labels, "values": new_values},
+            "signal": {"labels": source_labels, "values": signal_values},
+            "saved": {"labels": saved_status_labels, "values": saved_status_values},
+        },
+        "radar": {
+            "labels": source_labels,
+            "datasets": [
+                {"label": "Average Signal", "values": avg_signal_values},
+                {"label": "Relative Volume", "values": normalized_volume},
+            ],
+        },
+        "source_activity": {
+            "labels": source_labels,
+            "values": new_values,
+            "statuses": source_activity_statuses,
+        },
+        "categories": {
+            "labels": category_labels,
+            "values": category_values,
+            "scores": category_scores,
+        },
+        "saved_workflow": {
+            "datasets": dict(source_bubbles),
+            "status_axis": {
+                "labels": [label for _key, label in SAVED_STATUS_ORDER],
+                "values": [status_axis[key] for key, _label in SAVED_STATUS_ORDER],
+            },
+        },
+    }
 
 
-@app.route("/")
-def home():
-    """Main dashboard page"""
+def build_dashboard_state(scored_data, daily_summary, source_status_cards, saved_items, trending_keywords, status_warning):
+    """Create a compact live state payload for the frontend."""
+    live_state = {
+        "last_updated_raw": scored_data.get("last_updated") or "",
+        "last_updated_display": format_timestamp(scored_data.get("last_updated")) if scored_data.get("last_updated") else "Unknown",
+        "live_interval_seconds": 60,
+        "daily_summary": daily_summary,
+        "status_warning": status_warning,
+        "counts": {
+            "saved": len(saved_items),
+            "top_items": sum(1 for source_name, _label in SOURCE_META for item in scored_data.get(source_name, []) if item.get("signal_score", 0) >= 40),
+            "trending": len(trending_keywords),
+        },
+        "charts": build_chart_payload(scored_data, saved_items, source_status_cards),
+    }
+
+    signature_payload = {
+        "last_updated_raw": live_state["last_updated_raw"],
+        "daily_summary": daily_summary,
+        "sources": [
+            {
+                "source_name": card.get("source_name"),
+                "status_key": card.get("status_key"),
+                "item_count": card.get("item_count"),
+                "cache_age_display": card.get("cache_age_display"),
+                "last_success": card.get("last_success"),
+            }
+            for card in source_status_cards
+        ],
+        "saved_count": len(saved_items),
+        "trends": [
+            {"keyword": row.get("keyword"), "count": row.get("count")}
+            for row in trending_keywords[:8]
+        ],
+    }
+    live_state["snapshot_id"] = hashlib.sha1(
+        json.dumps(signature_payload, sort_keys=True).encode("utf-8")
+    ).hexdigest()[:12]
+    return live_state
+
+
+def build_dashboard_context():
+    """Build the full dashboard context once for HTML and live metadata."""
     scored_data = load_scored_data()
 
     saved_items = []
@@ -425,62 +575,75 @@ def home():
             ignored_urls = set()
 
     saved_urls = {item.get("url") for item in saved_items if item.get("url")}
-    for key in ["github", "huggingface", "youtube", "blogs", "papers"]:
+    for key, _label in SOURCE_META:
         scored_data[key] = filter_ignored_items(scored_data.get(key, []), ignored_urls)
 
     source_status_cards, daily_summary = build_source_health_response()
     status_warning = build_status_warning(source_status_cards)
 
-    # Prepare feed items (all high-signal items combined)
     feed_items = []
     for source_type, items in scored_data.items():
-        if source_type in ["github", "huggingface", "youtube", "blogs", "papers"]:
+        if source_type in [name for name, _label in SOURCE_META]:
             for item in items:
                 if item.get("signal_score", 0) >= 40:
                     feed_items.append({**item, "source_type": source_type})
-    
     feed_items.sort(key=lambda x: x.get("signal_score", 0), reverse=True)
 
-    # Get local/pi-suitable items
     local_items = [r for r in scored_data.get("github", []) if r.get("pi_suitability") in ["yes", "partial"]]
     local_items.sort(key=lambda x: x.get("signal_score", 0), reverse=True)
 
-    # Get trend radar data
     trending_keywords = []
     if intel_db:
         try:
             trending_keywords = intel_db.get_trending_keywords(7)
-        except:
-            pass
-    
+        except Exception:
+            trending_keywords = []
+
     last_updated = format_timestamp(scored_data.get("last_updated")) if scored_data.get("last_updated") else "Unknown"
     top_items = build_top_items(scored_data)
     weekend_items = build_try_this_weekend(scored_data)
     saved_groups = build_saved_groups(saved_items)
-    has_any_data = any(scored_data.get(key) for key in ["github", "huggingface", "youtube", "blogs", "papers"])
-
-    return render_template("dashboard.html",
-        github=scored_data.get("github", []),
-        huggingface=scored_data.get("huggingface", []),
-        youtube=scored_data.get("youtube", []),
-        blogs=scored_data.get("blogs", []),
-        papers=scored_data.get("papers", []),
-        feed_items=feed_items[:30],
-        local_items=local_items[:6],
-        saved_items=saved_items,
-        last_updated=last_updated,
-        trending_keywords=trending_keywords,
-        source_status_cards=source_status_cards,
-        daily_summary=daily_summary,
-        status_warning=status_warning,
-        top_items=top_items,
-        weekend_items=weekend_items,
-        saved_groups=saved_groups,
-        saved_urls=saved_urls,
-        digest_dir=DIGEST_DIR,
-        today_date=datetime.now().strftime("%Y-%m-%d"),
-        has_any_data=has_any_data,
+    has_any_data = any(scored_data.get(key) for key, _label in SOURCE_META)
+    dashboard_state = build_dashboard_state(
+        scored_data,
+        daily_summary,
+        source_status_cards,
+        saved_items,
+        trending_keywords,
+        status_warning,
     )
+
+    return {
+        "github": scored_data.get("github", []),
+        "huggingface": scored_data.get("huggingface", []),
+        "youtube": scored_data.get("youtube", []),
+        "blogs": scored_data.get("blogs", []),
+        "papers": scored_data.get("papers", []),
+        "feed_items": feed_items[:30],
+        "local_items": local_items[:6],
+        "saved_items": saved_items,
+        "last_updated": last_updated,
+        "trending_keywords": trending_keywords,
+        "source_status_cards": source_status_cards,
+        "daily_summary": daily_summary,
+        "status_warning": status_warning,
+        "top_items": top_items,
+        "weekend_items": weekend_items,
+        "saved_groups": saved_groups,
+        "saved_urls": saved_urls,
+        "digest_dir": DIGEST_DIR,
+        "today_date": datetime.now().strftime("%Y-%m-%d"),
+        "has_any_data": has_any_data,
+        "dashboard_state": dashboard_state,
+    }
+
+
+
+
+@app.route("/")
+def home():
+    """Main dashboard page"""
+    return render_template("dashboard.html", **build_dashboard_context())
 
 
 @app.route("/health")
@@ -643,6 +806,21 @@ def api_source_health():
     """Get source health status"""
     source_cards, daily_summary = build_source_health_response()
     return jsonify({"sources": source_cards, "summary": daily_summary})
+
+
+@app.route("/api/dashboard-meta")
+def api_dashboard_meta():
+    """Return a lightweight snapshot for live dashboard refresh checks."""
+    state = build_dashboard_context()["dashboard_state"]
+    return jsonify({
+        "snapshot_id": state["snapshot_id"],
+        "last_updated_raw": state["last_updated_raw"],
+        "last_updated_display": state["last_updated_display"],
+        "live_interval_seconds": state["live_interval_seconds"],
+        "daily_summary": state["daily_summary"],
+        "status_warning": state["status_warning"],
+        "counts": state["counts"],
+    })
 
 
 @app.route("/api/refresh", methods=["POST"])

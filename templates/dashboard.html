@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Intelligence Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 </head>
 <body>
     <div class="app-shell">
@@ -13,21 +14,54 @@
             <div class="logo">AI <span>Intelligence</span> Hub</div>
             
             <nav class="sidebar-nav">
-                <button class="nav-btn active" onclick="showTab('overview', this)">Overview</button>
-                <button class="nav-btn" onclick="showTab('feed', this)">Feed</button>
-                <button class="nav-btn" onclick="showTab('github', this)">GitHub</button>
-                <button class="nav-btn" onclick="showTab('models', this)">Models</button>
-                <button class="nav-btn" onclick="showTab('research', this)">Research</button>
-                <button class="nav-btn" onclick="showTab('videos', this)">Videos</button>
-                <button class="nav-btn" onclick="showTab('news', this)">News</button>
-                <button class="nav-btn" onclick="showTab('local', this)">Local Lab</button>
-                <button class="nav-btn" onclick="showTab('saved', this)">Saved</button>
-                <button class="nav-btn" onclick="showTab('trends', this)">Trends</button>
-                <button class="nav-btn" onclick="showTab('settings', this)">Settings</button>
+                <button class="nav-btn active" onclick="showTab('overview', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Overview
+                </button>
+                <button class="nav-btn" onclick="showTab('feed', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+                    Feed
+                </button>
+                <button class="nav-btn" onclick="showTab('github', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub
+                </button>
+                <button class="nav-btn" onclick="showTab('models', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 12 2.1 12a10.01 10.01 0 0 0 1.79 5.24l8.11-5.24z"></path><path d="M12 12 8.1 21.9a10 10 0 0 0 5.24-1.79l-1.34-8.11z"></path></svg>
+                    Models
+                </button>
+                <button class="nav-btn" onclick="showTab('research', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    Research
+                </button>
+                <button class="nav-btn" onclick="showTab('videos', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                    Videos
+                </button>
+                <button class="nav-btn" onclick="showTab('news', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg>
+                    News
+                </button>
+                <button class="nav-btn" onclick="showTab('local', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    Local Lab
+                </button>
+                <button class="nav-btn" onclick="showTab('saved', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                    Saved
+                </button>
+                <button class="nav-btn" onclick="showTab('trends', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    Trends
+                </button>
+                <button class="nav-btn" onclick="showTab('settings', this)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Settings
+                </button>
             </nav>
 
             <div class="sidebar-footer">
-                <div class="source-health-mini">
+                <div class="source-health-mini" id="sidebar-source-health-mini">
                     {% for source in source_status_cards %}
                     <div class="health-dot-item">
                         <span class="health-dot {{ 'healthy' if source.status_key == 'ok' else 'warning' if source.status_key in ['cache', 'stale'] else 'error' }}"></span>
@@ -35,7 +69,10 @@
                     </div>
                     {% endfor %}
                 </div>
-                <button class="btn-theme" onclick="toggleTheme()">Toggle Theme</button>
+                <button class="btn-theme" onclick="toggleTheme()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    Toggle Theme
+                </button>
             </div>
         </aside>
 
@@ -46,11 +83,25 @@
                 </div>
                 <div class="header-right">
                     <div class="search-container">
+                        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         <input type="text" id="global-search" class="search-input" placeholder="Search intelligence..." onkeyup="searchCards(this.value)">
                     </div>
-                    <button class="btn btn-primary" onclick="refreshNow(this)">Refresh Now</button>
-                    <button class="btn" onclick="openDigest()">Daily Digest</button>
-                    <span class="last-updated">{{ last_updated }}</span>
+                    <button class="btn btn-primary" onclick="refreshNow(this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        Refresh Now
+                    </button>
+                    <button class="btn" onclick="openDigest()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Daily Digest
+                    </button>
+                    <button class="live-status" id="live-status" data-live-state="live" type="button" onclick="applyPendingLiveRefresh()" aria-live="polite">
+                        <span class="live-dot"></span>
+                        <span class="live-text">Live</span>
+                    </button>
+                    <div class="last-updated-group">
+                        <span class="last-updated-label">Updated</span>
+                        <span class="last-updated">{{ last_updated }}</span>
+                    </div>
                 </div>
             </header>
 
@@ -58,26 +109,36 @@
                 <!-- Overview Page -->
                 <div id="overview" class="section active">
                     <div class="overview-grid">
+                        {% if status_warning %}
+                        <div class="inline-alert inline-alert-warning" id="overview-status-warning">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <span>{{ status_warning }}</span>
+                        </div>
+                        {% endif %}
                         <div class="summary-row">
                             <div class="card summary-card highlight">
                                 <div class="summary-label">Daily Trust State</div>
                                 <div class="summary-value">{{ daily_summary.trust_state }}</div>
                                 <div class="summary-text">{{ daily_summary.freshness_message }}</div>
+                                <canvas class="sparkline" id="sparkline-trust" data-metric="trust"></canvas>
                             </div>
                             <div class="card summary-card">
                                 <div class="summary-label">New Today</div>
                                 <div class="summary-value">{{ daily_summary.new_items_today }}</div>
                                 <div class="summary-text">Items collected</div>
+                                <canvas class="sparkline" id="sparkline-new" data-metric="new"></canvas>
                             </div>
                             <div class="card summary-card">
                                 <div class="summary-label">High Signal</div>
                                 <div class="summary-value">{{ top_items|length }}</div>
                                 <div class="summary-text">Actionable items</div>
+                                <canvas class="sparkline" id="sparkline-signal" data-metric="signal"></canvas>
                             </div>
                             <div class="card summary-card">
                                 <div class="summary-label">Saved</div>
                                 <div class="summary-value">{{ saved_items|length }}</div>
                                 <div class="summary-text">In your board</div>
+                                <canvas class="sparkline" id="sparkline-saved" data-metric="saved"></canvas>
                             </div>
                         </div>
 
@@ -204,8 +265,8 @@
                             <span class="text-muted">{{ github|length }} repositories</span>
                         </div>
                         <div class="view-controls">
-                            <button class="btn btn-small active" onclick="toggleView('github', 'card', this)">Cards</button>
-                            <button class="btn btn-small" onclick="toggleView('github', 'table', this)">Table</button>
+                            <button class="btn btn-small active" data-view-tab="github" data-view-mode="card" onclick="toggleView('github', 'card', this)">Cards</button>
+                            <button class="btn btn-small" data-view-tab="github" data-view-mode="table" onclick="toggleView('github', 'table', this)">Table</button>
                         </div>
                     </div>
                     
@@ -275,8 +336,8 @@
                             <span class="text-muted">{{ huggingface|length }} models</span>
                         </div>
                         <div class="view-controls">
-                            <button class="btn btn-small active" onclick="toggleView('models', 'card', this)">Cards</button>
-                            <button class="btn btn-small" onclick="toggleView('models', 'table', this)">Table</button>
+                            <button class="btn btn-small active" data-view-tab="models" data-view-mode="card" onclick="toggleView('models', 'card', this)">Cards</button>
+                            <button class="btn btn-small" data-view-tab="models" data-view-mode="table" onclick="toggleView('models', 'table', this)">Table</button>
                         </div>
                     </div>
 
@@ -347,8 +408,8 @@
                             <span class="text-muted">{{ papers|length }} papers</span>
                         </div>
                         <div class="view-controls">
-                            <button class="btn btn-small active" onclick="toggleView('research', 'card', this)">Cards</button>
-                            <button class="btn btn-small" onclick="toggleView('research', 'table', this)">Table</button>
+                            <button class="btn btn-small active" data-view-tab="research" data-view-mode="card" onclick="toggleView('research', 'card', this)">Cards</button>
+                            <button class="btn btn-small" data-view-tab="research" data-view-mode="table" onclick="toggleView('research', 'table', this)">Table</button>
                         </div>
                     </div>
 
@@ -574,6 +635,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="trends-charts-grid">
+                        <div class="card chart-card">
+                            <h3>Source Signal Radar</h3>
+                            <canvas id="radar-chart"></canvas>
+                        </div>
+                        <div class="card chart-card">
+                            <h3>Source Volume</h3>
+                            <canvas id="heatmap-chart"></canvas>
+                        </div>
+                        <div class="card chart-card">
+                            <h3>Category Breakdown</h3>
+                            <canvas id="treemap-chart"></canvas>
+                        </div>
+                        <div class="card chart-card">
+                            <h3>Saved Workflow Map</h3>
+                            <canvas id="bubble-chart"></canvas>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Settings Tab -->
@@ -603,11 +682,15 @@
                         </div>
                     </div>
                 </div>
+                <script id="dashboard-state" type="application/json">{{ dashboard_state|tojson }}</script>
             </main>
         </div>
     </div>
 
     <div id="toast-container" class="toast-container"></div>
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+    </div>
     <div id="digest-modal" class="digest-modal" onclick="closeDigest(event)">
         <div class="digest-panel">
             <div class="digest-panel-head">
@@ -621,154 +704,58 @@
         </div>
     </div>
 
-    <script>
-        function showTab(tabId, btn) {
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            if (btn) btn.classList.add('active');
-            document.getElementById('page-title').textContent = document.querySelector('#' + tabId + ' .section-title')?.textContent || tabId;
-        }
+    <!-- Empty State Templates -->
+    <template id="empty-state-template">
+        <div class="empty-state">
+            <div class="empty-state-icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            </div>
+            <div class="empty-state-title">No items found</div>
+            <div class="empty-state-message">Try adjusting your filters or search terms.</div>
+            <button class="btn btn-primary empty-state-action">Clear Filters</button>
+        </div>
+    </template>
 
-        function toggleTheme() {
-            const body = document.body;
-            const current = body.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        }
+    <!-- Skeleton Templates -->
+    <template id="skeleton-card-template">
+        <div class="card item-card skeleton-card">
+            <div class="skeleton-header">
+                <div class="skeleton-badge"></div>
+                <div class="skeleton-badge"></div>
+            </div>
+            <div class="skeleton-title"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-footer">
+                <div class="skeleton-button"></div>
+                <div class="skeleton-button"></div>
+            </div>
+        </div>
+    </template>
 
-        function toggleView(tab, view, btn) {
-            document.getElementById(tab + '-card-view').style.display = view === 'card' ? 'grid' : 'none';
-            document.getElementById(tab + '-table-view').style.display = view === 'table' ? 'block' : 'none';
-            btn.parentElement.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
+    <template id="skeleton-summary-template">
+        <div class="card summary-card skeleton-card">
+            <div class="skeleton-label"></div>
+            <div class="skeleton-value"></div>
+            <div class="skeleton-line short"></div>
+        </div>
+    </template>
 
-        function searchCards(query) {
-            const q = query.toLowerCase().trim();
-            document.querySelectorAll('.search-target').forEach(card => {
-                const text = (card.dataset.search || card.textContent || '').toLowerCase();
-                card.style.display = !q || text.includes(q) ? 'block' : 'none';
-            });
-        }
+    <template id="skeleton-row-template">
+        <tr class="skeleton-row">
+            <td><div class="skeleton-line"></div></td>
+            <td><div class="skeleton-badge"></div></td>
+            <td><div class="skeleton-line short"></div></td>
+            <td><div class="skeleton-line short"></div></td>
+            <td><div class="skeleton-line short"></div></td>
+            <td><div class="skeleton-button"></div></td>
+        </tr>
+    </template>
 
-        function setCardFilter(mode, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('#feed .search-target').forEach(card => {
-                const label = (card.dataset.scoreLabel || '').toLowerCase();
-                card.style.display = mode === 'all' || label.includes(mode) ? 'block' : 'none';
-            });
-        }
-
-        function filterSaved(status, btn) {
-            if (btn) {
-                btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            }
-            document.querySelectorAll('#saved .saved-card').forEach(card => {
-                card.style.display = status === 'all' || card.dataset.status === status ? 'flex' : 'none';
-            });
-        }
-
-        function refreshNow(button) {
-            if (button) { button.disabled = true; button.textContent = 'Refreshing...'; }
-            fetch('/api/refresh', { method: 'POST' }).then(r => r.json()).then(d => {
-                if (d.status === 'ok') window.location.reload();
-                else { if (button) { button.disabled = false; button.textContent = 'Refresh Now'; } }
-            }).catch(() => { if (button) { button.disabled = false; button.textContent = 'Refresh Now'; } });
-        }
-
-        function openDigest() {
-            fetch('/api/digest').then(r => r.json()).then(d => {
-                if (d.error) { alert(d.error); return; }
-                document.getElementById('digest-content').textContent = d.digest || '';
-                document.getElementById('digest-modal').classList.add('open');
-            });
-        }
-
-        function closeDigest(e) {
-            if (!e || e.target.id === 'digest-modal') document.getElementById('digest-modal').classList.remove('open');
-        }
-
-        function copyDigest() {
-            navigator.clipboard.writeText(document.getElementById('digest-content').textContent);
-            showToast('Copied', 'Digest copied to clipboard.');
-        }
-
-        function saveItem(item, btn) {
-            fetch('/api/save', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(item)
-            }).then(r => r.json()).then(d => {
-                if (d.success) {
-                    btn.textContent = 'Saved';
-                    btn.disabled = true;
-                    showToast('Saved', d.message || 'Item saved to board.');
-                }
-            });
-        }
-
-        function ignoreItem(item, btn) {
-            fetch('/api/ignore', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(item)
-            }).then(r => r.json()).then(d => {
-                if (d.success) { btn.closest('.item-card').style.display = 'none'; showToast('Ignored', 'Item hidden.'); }
-            });
-        }
-
-        function trackItem(item, btn) {
-            fetch('/api/track', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(item)
-            }).then(r => r.json()).then(d => {
-                if (d.success) { btn.textContent = 'Tracked'; btn.disabled = true; showToast('Tracking', d.message); }
-            });
-        }
-
-        function deleteItem(id, btn) {
-            fetch('/api/saved/' + id, {method: 'DELETE'}).then(r => r.json()).then(d => {
-                if (d.success) { btn.closest('.saved-card').remove(); showToast('Removed', 'Item removed.'); }
-            });
-        }
-
-        function updateStatus(id, status) {
-            fetch('/api/saved/' + id + '/status', {
-                method: 'PUT',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({status})
-            }).then(r => r.json()).then(d => {
-                if (d.success) showToast('Updated', 'Status changed to ' + status);
-            });
-        }
-
-        function updateNotes(id, notes, tags) {
-            fetch('/api/saved/' + id + '/notes', {
-                method: 'PUT',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({notes, tags: tags.split(',').map(t => t.trim()).filter(Boolean)})
-            }).then(r => r.json()).then(d => {
-                if (d.success) showToast('Saved', 'Notes updated.');
-            });
-        }
-
-        function showToast(title, message) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.innerHTML = '<div class="toast-title">' + title + '</div><div class="toast-copy">' + message + '</div>';
-            container.appendChild(toast);
-            setTimeout(() => toast.remove(), 3200);
-        }
-
-        // Init theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.body.setAttribute('data-theme', savedTheme);
-    </script>
+    <script src="/static/app.js"></script>
 </body>
 </html>

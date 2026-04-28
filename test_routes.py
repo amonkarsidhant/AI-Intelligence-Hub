@@ -132,3 +132,17 @@ def test_refresh_endpoint_success_and_failure_preserves_data(client, app_env, mo
     assert failure_payload["status"] == "failed"
     assert "Existing data preserved" in failure_payload["message"]
     assert (app_env["data_dir"] / "data.json").read_text(encoding="utf-8") == original_data
+
+
+def test_dashboard_meta_snapshot(client, app_env):
+    module = app_env["module"]
+    module.intel_db.update_source_health("github", True, item_count=3)
+
+    response = client.get("/api/dashboard-meta")
+    assert response.status_code == 200
+
+    payload = response.get_json()
+    assert payload["snapshot_id"]
+    assert "last_updated_display" in payload
+    assert "daily_summary" in payload
+    assert "counts" in payload
