@@ -63,7 +63,7 @@ AI Intelligence Hub focuses on:
 
 ### How It Works
 
-![How It Works](docs/screenshots/how-it-works.svg)
+![How It Works](docs/screenshots/how-it-works.png)
 
 ## Data Sources
 
