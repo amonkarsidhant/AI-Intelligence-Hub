@@ -61,10 +61,6 @@ AI Intelligence Hub focuses on:
 
 ![Mobile Overview](docs/screenshots/mobile-overview.png)
 
-### How It Works
-
-![How It Works](docs/screenshots/how-it-works.png)
-
 ## Data Sources
 
 Current source families:
