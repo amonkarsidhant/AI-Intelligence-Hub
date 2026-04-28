@@ -1,0 +1,61 @@
+{
+  "focus_areas": [
+    "agentic AI",
+    "coding agents",
+    "open-source LLMs",
+    "local LLMs",
+    "Ollama",
+    "Raspberry Pi AI",
+    "lightweight models",
+    "AI engineering tools",
+    "model evaluation",
+    "RAG",
+    "AI infrastructure",
+    "developer productivity",
+    "self-hosted AI",
+    "code generation",
+    "code review",
+    "agent workflows",
+    "tool calling",
+    "multi-agent",
+    "autonomous agents",
+    "browser automation",
+    "CLI agents",
+    "sandboxing",
+    "evals",
+    "benchmarking"
+  ],
+  "blocked_keywords": [
+    "nsfw",
+    "porn",
+    "sex",
+    "casino",
+    "spam",
+    "scam",
+    "crypto scam",
+    "download crypto",
+    "free bitcoin",
+    "buy followers",
+    "fake reviews"
+  ],
+  "scoring_weights": {
+    "recency_weight": 0.20,
+    "popularity_weight": 0.15,
+    "star_growth_weight": 0.25,
+    "agentic_relevance_weight": 0.15,
+    "local_relevance_weight": 0.10,
+    "developer_productivity_weight": 0.10,
+    "pi_suitability_weight": 0.05
+  },
+  "category_thresholds": {
+    "hot": 80,
+    "worth_watching": 60,
+    "interesting": 40
+  },
+  "action_mapping": {
+    "hot": "try",
+    "worth_watching": "save",
+    "interesting": "read",
+    "low_priority": "ignore"
+  }
+}

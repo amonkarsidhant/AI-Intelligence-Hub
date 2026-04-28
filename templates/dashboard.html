@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Intelligence Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="logo">AI <span>Intelligence</span> Hub</div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" onclick="showTab('overview', this)">Overview</button>
+                <button class="nav-btn" onclick="showTab('feed', this)">Feed</button>
+                <button class="nav-btn" onclick="showTab('github', this)">GitHub</button>
+                <button class="nav-btn" onclick="showTab('models', this)">Models</button>
+                <button class="nav-btn" onclick="showTab('research', this)">Research</button>
+                <button class="nav-btn" onclick="showTab('videos', this)">Videos</button>
+                <button class="nav-btn" onclick="showTab('news', this)">News</button>
+                <button class="nav-btn" onclick="showTab('local', this)">Local Lab</button>
+                <button class="nav-btn" onclick="showTab('saved', this)">Saved</button>
+                <button class="nav-btn" onclick="showTab('trends', this)">Trends</button>
+                <button class="nav-btn" onclick="showTab('settings', this)">Settings</button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="source-health-mini">
+                    {% for source in source_status_cards %}
+                    <div class="health-dot-item">
+                        <span class="health-dot {{ 'healthy' if source.status_key == 'ok' else 'warning' if source.status_key in ['cache', 'stale'] else 'error' }}"></span>
+                        <span class="health-label">{{ source.label }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="btn-theme" onclick="toggleTheme()">Toggle Theme</button>
+            </div>
+        </aside>
+
+        <div class="main-container">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 id="page-title">Overview</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="global-search" class="search-input" placeholder="Search intelligence..." onkeyup="searchCards(this.value)">
+                    </div>
+                    <button class="btn btn-primary" onclick="refreshNow(this)">Refresh Now</button>
+                    <button class="btn" onclick="openDigest()">Daily Digest</button>
+                    <span class="last-updated">{{ last_updated }}</span>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <!-- Overview Page -->
+                <div id="overview" class="section active">
+                    <div class="overview-grid">
+                        <div class="summary-row">
+                            <div class="card summary-card highlight">
+                                <div class="summary-label">Daily Trust State</div>
+                                <div class="summary-value">{{ daily_summary.trust_state }}</div>
+                                <div class="summary-text">{{ daily_summary.freshness_message }}</div>
+                            </div>
+                            <div class="card summary-card">
+                                <div class="summary-label">New Today</div>
+                                <div class="summary-value">{{ daily_summary.new_items_today }}</div>
+                                <div class="summary-text">Items collected</div>
+                            </div>
+                            <div class="card summary-card">
+                                <div class="summary-label">High Signal</div>
+                                <div class="summary-value">{{ top_items|length }}</div>
+                                <div class="summary-text">Actionable items</div>
+                            </div>
+                            <div class="card summary-card">
+                                <div class="summary-label">Saved</div>
+                                <div class="summary-value">{{ saved_items|length }}</div>
+                                <div class="summary-text">In your board</div>
+                            </div>
+                        </div>
+
+                        <div class="overview-main-grid">
+                            <div class="overview-section">
+                                <h2 class="section-title">Today's Top 5</h2>
+                                <div class="grid-cards">
+                                    {% for item in top_items %}
+                                    <div class="card item-card search-target" data-search="{{ (item.title ~ ' ' ~ item.why_it_matters ~ ' ' ~ item.why_it_matters_to_me ~ ' ' ~ item.categories|join(' '))|lower }}">
+                                        <div class="card-header">
+                                            <span class="badge-score {% if item.signal_score >= 80 %}hot{% elif item.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ item.signal_score }}</span>
+                                            <span class="badge-source source-{{ item.source_type }}">{{ item.source_label }}</span>
+                                        </div>
+                                        <div class="card-title">{{ item.title }}</div>
+                                        <div class="card-why-matters"><strong>Why it matters:</strong> {{ item.why_it_matters }}</div>
+                                        <div class="card-why-me"><strong>For me:</strong> {{ item.why_it_matters_to_me }}</div>
+                                        <div class="card-footer">
+                                            <span class="action-rec">{{ item.recommended_action }}</span>
+                                            <div class="card-actions">
+                                                <button class="btn btn-small" onclick='saveItem({{ {"url": item.url, "title": item.title, "source": item.source, "source_type": item.source_type, "category": item.categories[0] if item.categories else "", "signal_score": item.signal_score}|tojson }}, this)'>{{ 'Saved' if item.url in saved_urls else 'Save' }}</button>
+                                                <a href="{{ item.url }}" target="_blank" class="btn btn-small">Open</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="overview-section">
+                                <h2 class="section-title">Try This Weekend</h2>
+                                <div class="grid-cards">
+                                    {% for item in weekend_items %}
+                                    <div class="card item-card search-target" data-search="{{ (item.title ~ ' ' ~ item.why_worth_trying ~ ' ' ~ item.install_command)|lower }}">
+                                        <div class="card-header">
+                                            <span class="badge-score {% if item.signal_score >= 80 %}hot{% elif item.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ item.signal_score }}</span>
+                                            <span class="badge-source source-{{ item.source_type }}">{{ item.source_label }}</span>
+                                            <span class="badge-pi pi-{{ item.pi_suitability }}">Pi: {{ item.pi_suitability }}</span>
+                                        </div>
+                                        <div class="card-title">{{ item.title }}</div>
+                                        <div class="card-why-worth"><strong>Worth trying:</strong> {{ item.why_worth_trying }}</div>
+                                        <div class="command-box">{{ item.install_command }}</div>
+                                        <div class="card-footer">
+                                            <span class="difficulty">Difficulty: {{ item.setup_difficulty }}</span>
+                                            <div class="card-actions">
+                                                <button class="btn btn-small" onclick='saveItem({{ {"url": item.url, "title": item.title, "source": item.source, "source_type": item.source_type, "category": item.categories[0] if item.categories else "", "signal_score": item.signal_score}|tojson }}, this)'>{{ 'Saved' if item.url in saved_urls else 'Save' }}</button>
+                                                <a href="{{ item.url }}" target="_blank" class="btn btn-small">Open</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-section full-width">
+                            <h2 class="section-title">Source Health</h2>
+                            <div class="health-grid">
+                                {% for source in source_status_cards %}
+                                <div class="card health-card status-{{ source.status_key }}">
+                                    <div class="health-card-header">
+                                        <span class="health-label">{{ source.label }}</span>
+                                        <span class="health-status-badge">{{ source.status_label }}</span>
+                                    </div>
+                                    <div class="health-metrics">
+                                        <span>Items: {{ source.item_count }}</span>
+                                        <span>Age: {{ source.cache_age_display }}</span>
+                                        <span>Last: {{ source.last_success_relative }}</span>
+                                    </div>
+                                    <div class="health-summary">{{ source.summary }}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feed Tab -->
+                <div id="feed" class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">High Signal Feed</h2>
+                        <div class="filter-bar">
+                            <button class="filter-btn active" onclick="setCardFilter('all', this)">All</button>
+                            <button class="filter-btn" onclick="setCardFilter('hot', this)">Hot</button>
+                            <button class="filter-btn" onclick="setCardFilter('pi', this)">Pi Compatible</button>
+                            <button class="filter-btn" onclick="setCardFilter('agentic', this)">Agentic</button>
+                        </div>
+                    </div>
+                    <div class="card-grid" id="feed-grid">
+                        {% for item in feed_items %}
+                        <div class="card item-card search-target" data-search="{{ (item.title ~ ' ' ~ item.description ~ ' ' ~ item.categories|join(' '))|lower }}" data-breakdown='{{ item.score_breakdown|tojson if item.score_breakdown else "{}" }}' data-why="{{ item.why|default('calculating') }}" data-score-label="{{ item.score_label|default('Interesting')|lower }}" data-pi="{{ item.pi_suitability|default('partial') }}" data-saved="{{ 'yes' if item.url in saved_urls else 'no' }}">
+                            <div class="card-header">
+                                <span class="badge-score {% if item.signal_score >= 80 %}hot{% elif item.signal_score >= 60 %}watch{% else %}interesting{% endif %}" title="Hover for score breakdown">{{ item.signal_score }}</span>
+                                <span class="badge-source source-{{ item.source_type }}">{{ item.source_type }}</span>
+                            </div>
+                            <div class="card-title">{{ item.title }}</div>
+                            <div class="card-desc">{{ item.description }}</div>
+                            <div class="card-meta-row">
+                                {% if item.pi_suitability %}
+                                <span class="badge-pi pi-{{ item.pi_suitability }}">Pi: {{ item.pi_suitability }}</span>
+                                {% endif %}
+                                <span>{{ item.action|upper }}</span>
+                            </div>
+                            <div class="card-tags">
+                                {% for cat in item.categories[:3] %}<span class="tag">{{ cat }}</span>{% endfor %}
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn btn-small action-ignore" onclick='ignoreItem({{ {"url": item.url, "title": item.title, "source": item.source, "source_type": item.source_type}|tojson }}, this)'>Ignore</button>
+                                    <button class="btn btn-small" onclick='trackItem({{ {"topic": item.categories[0] if item.categories else "general", "reason": "from card: " + item.title}|tojson }}, this)'>Track</button>
+                                    <button class="btn btn-small action-save" onclick='saveItem({{ {"url": item.url, "title": item.title, "source": item.source, "source_type": item.source_type, "category": item.categories[0] if item.categories else "", "signal_score": item.signal_score}|tojson }}, this)'>{{ 'Saved' if item.url in saved_urls else 'Save' }}</button>
+                                    <a href="{{ item.url }}" target="_blank" class="btn btn-small">Open</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- GitHub Tab -->
+                <div id="github" class="section">
+                    <div class="section-header">
+                        <div class="header-left">
+                            <h2 class="section-title">GitHub Trending</h2>
+                            <span class="text-muted">{{ github|length }} repositories</span>
+                        </div>
+                        <div class="view-controls">
+                            <button class="btn btn-small active" onclick="toggleView('github', 'card', this)">Cards</button>
+                            <button class="btn btn-small" onclick="toggleView('github', 'table', this)">Table</button>
+                        </div>
+                    </div>
+                    
+                    <div id="github-card-view" class="card-grid">
+                        {% for repo in github[:20] %}
+                        <div class="card item-card search-target" data-search="{{ (repo.title ~ ' ' ~ repo.description ~ ' ' ~ repo.categories|join(' '))|lower }}">
+                            <div class="card-header">
+                                <span class="badge-score {% if repo.signal_score >= 80 %}hot{% elif repo.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ repo.signal_score }}</span>
+                                <span class="badge-source source-github">GitHub</span>
+                            </div>
+                            <div class="card-title">{{ repo.title }}</div>
+                            <div class="card-desc">{{ repo.description }}</div>
+                            <div class="card-meta-row">
+                                <span class="badge-pi pi-{{ repo.pi_suitability }}">Pi: {{ repo.pi_suitability }}</span>
+                                <span>{{ repo.stars }} stars</span>
+                                <span>{{ repo.language }}</span>
+                            </div>
+                            <div class="card-tags">
+                                {% for cat in repo.categories[:3] %}<span class="tag">{{ cat }}</span>{% endfor %}
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn btn-small action-save" onclick='saveItem({{ {"url": repo.url, "title": repo.title, "source": repo.source, "source_type": "github", "category": repo.categories[0] if repo.categories else "", "signal_score": repo.signal_score}|tojson }}, this)'>{{ 'Saved' if repo.url in saved_urls else 'Save' }}</button>
+                                    <a href="{{ repo.url }}" target="_blank" class="btn btn-small">Open</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div id="github-table-view" class="table-container" style="display:none">
+                        <table class="intel-table">
+                            <thead>
+                                <tr>
+                                    <th>Repo</th>
+                                    <th>Score</th>
+                                    <th>Stars</th>
+                                    <th>Lang</th>
+                                    <th>Pi</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for repo in github[:20] %}
+                                <tr>
+                                    <td class="td-title">{{ repo.title }}</td>
+                                    <td><span class="badge-score {% if repo.signal_score >= 80 %}hot{% elif repo.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ repo.signal_score }}</span></td>
+                                    <td>{{ repo.stars }}</td>
+                                    <td>{{ repo.language }}</td>
+                                    <td><span class="badge-pi pi-{{ repo.pi_suitability }}">{{ repo.pi_suitability }}</span></td>
+                                    <td>
+                                        <button class="btn btn-small" onclick='saveItem({{ {"url": repo.url, "title": repo.title, "source": repo.source, "source_type": "github", "category": repo.categories[0] if repo.categories else "", "signal_score": repo.signal_score}|tojson }}, this)'>Save</button>
+                                        <a href="{{ repo.url }}" target="_blank" class="btn btn-small">Open</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Models Tab -->
+                <div id="models" class="section">
+                    <div class="section-header">
+                        <div class="header-left">
+                            <h2 class="section-title">Models</h2>
+                            <span class="text-muted">{{ huggingface|length }} models</span>
+                        </div>
+                        <div class="view-controls">
+                            <button class="btn btn-small active" onclick="toggleView('models', 'card', this)">Cards</button>
+                            <button class="btn btn-small" onclick="toggleView('models', 'table', this)">Table</button>
+                        </div>
+                    </div>
+
+                    <div id="models-card-view" class="card-grid">
+                        {% for model in huggingface[:20] %}
+                        <div class="card item-card search-target" data-search="{{ (model.title ~ ' ' ~ model.description ~ ' ' ~ model.categories|join(' '))|lower }}">
+                            <div class="card-header">
+                                <span class="badge-score {% if model.signal_score >= 80 %}hot{% elif model.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ model.signal_score }}</span>
+                                <span class="badge-source source-huggingface">Model</span>
+                            </div>
+                            <div class="card-title">{{ model.title }}</div>
+                            <div class="card-desc">{{ model.description }}</div>
+                            <div class="card-meta-row">
+                                <span>{{ model.downloads|default(0) }} downloads</span>
+                                {% if model.is_local_compatible %}<span class="badge-pi pi-yes">Local</span>{% endif %}
+                            </div>
+                            <div class="card-tags">
+                                {% if model.is_coding_model %}<span class="tag">Coding</span>{% endif %}
+                                {% if model.is_small %}<span class="tag">Small</span>{% endif %}
+                                {% if model.is_agent_ready %}<span class="tag">Agent</span>{% endif %}
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn btn-small action-save" onclick='saveItem({{ {"url": model.url, "title": model.title, "source": model.source, "source_type": "huggingface", "category": model.categories[0] if model.categories else "", "signal_score": model.signal_score}|tojson }}, this)'>{{ 'Saved' if model.url in saved_urls else 'Save' }}</button>
+                                    <a href="{{ model.url }}" target="_blank" class="btn btn-small">Open</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div id="models-table-view" class="table-container" style="display:none">
+                        <table class="intel-table">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Score</th>
+                                    <th>Downloads</th>
+                                    <th>Local</th>
+                                    <th>Coding</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for model in huggingface[:20] %}
+                                <tr>
+                                    <td class="td-title">{{ model.title }}</td>
+                                    <td><span class="badge-score {% if model.signal_score >= 80 %}hot{% elif model.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ model.signal_score }}</span></td>
+                                    <td>{{ model.downloads|default(0) }}</td>
+                                    <td>{{ 'Yes' if model.is_local_compatible else 'No' }}</td>
+                                    <td>{{ 'Yes' if model.is_coding_model else 'No' }}</td>
+                                    <td>
+                                        <button class="btn btn-small" onclick='saveItem({{ {"url": model.url, "title": model.title, "source": model.source, "source_type": "huggingface", "category": model.categories[0] if model.categories else "", "signal_score": model.signal_score}|tojson }}, this)'>Save</button>
+                                        <a href="{{ model.url }}" target="_blank" class="btn btn-small">Open</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Research Tab -->
+                <div id="research" class="section">
+                    <div class="section-header">
+                        <div class="header-left">
+                            <h2 class="section-title">Research</h2>
+                            <span class="text-muted">{{ papers|length }} papers</span>
+                        </div>
+                        <div class="view-controls">
+                            <button class="btn btn-small active" onclick="toggleView('research', 'card', this)">Cards</button>
+                            <button class="btn btn-small" onclick="toggleView('research', 'table', this)">Table</button>
+                        </div>
+                    </div>
+
+                    <div id="research-card-view" class="card-grid">
+                        {% for paper in papers[:15] %}
+                        <div class="card item-card search-target" data-search="{{ (paper.title ~ ' ' ~ paper.abstract ~ ' ' ~ paper.categories|join(' '))|lower }}">
+                            <div class="card-header">
+                                <span class="badge-score {% if paper.signal_score >= 80 %}hot{% elif paper.signal_score >= 50 %}watch{% else %}interesting{% endif %}">{{ paper.signal_score }}</span>
+                                <span class="badge-source source-papers">Paper</span>
+                            </div>
+                            <div class="card-title">{{ paper.title }}</div>
+                            <div class="card-desc">{{ paper.description }}</div>
+                            <div class="card-meta-row">
+                                {% if paper.recommendation %}<span class="badge-{{ paper.recommendation }}">{{ paper.recommendation }}</span>{% endif %}
+                                {% if paper.has_code %}<span class="tag">Has Code</span>{% endif %}
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn btn-small action-save" onclick='saveItem({{ {"url": paper.url, "title": paper.title, "source": paper.source, "source_type": "papers", "category": paper.categories[0] if paper.categories else "", "signal_score": paper.signal_score}|tojson }}, this)'>{{ 'Saved' if paper.url in saved_urls else 'Save' }}</button>
+                                    <a href="{{ paper.url }}" target="_blank" class="btn btn-small">Open</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div id="research-table-view" class="table-container" style="display:none">
+                        <table class="intel-table">
+                            <thead>
+                                <tr>
+                                    <th>Paper</th>
+                                    <th>Score</th>
+                                    <th>Recommendation</th>
+                                    <th>Has Code</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for paper in papers[:15] %}
+                                <tr>
+                                    <td class="td-title">{{ paper.title }}</td>
+                                    <td><span class="badge-score {% if paper.signal_score >= 80 %}hot{% elif paper.signal_score >= 50 %}watch{% else %}interesting{% endif %}">{{ paper.signal_score }}</span></td>
+                                    <td>{{ paper.recommendation|default('read') }}</td>
+                                    <td>{{ 'Yes' if paper.has_code else 'No' }}</td>
+                                    <td>
+                                        <button class="btn btn-small" onclick='saveItem({{ {"url": paper.url, "title": paper.title, "source": paper.source, "source_type": "papers", "category": paper.categories[0] if paper.categories else "", "signal_score": paper.signal_score}|tojson }}, this)'>Save</button>
+                                        <a href="{{ paper.url }}" target="_blank" class="btn btn-small">Open</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Videos Tab -->
+                <div id="videos" class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Videos</h2>
+                    </div>
+                    <div class="card-grid">
+                        {% for video in youtube[:15] %}
+                        <div class="card item-card search-target" data-search="{{ (video.title ~ ' ' ~ video.description)|lower }}">
+                            <div class="card-header">
+                                <span class="badge-score {% if video.signal_score >= 80 %}hot{% elif video.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ video.signal_score }}</span>
+                                <span class="badge-source source-youtube">Video</span>
+                            </div>
+                            <div class="card-title">{{ video.title }}</div>
+                            <div class="card-desc">{{ video.description|default('')|slice(0, 100) }}{% if video.description and video.description|length > 100 %}...{% endif %}</div>
+                            <div class="card-meta-row">
+                                <span>{{ video.views }} views</span>
+                                <span>{{ video.watch_priority|default('medium') }}</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <a href="{{ video.url }}" target="_blank" class="btn btn-small">Watch</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- News Tab -->
+                <div id="news" class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">News</h2>
+                    </div>
+                    <div class="card-grid">
+                        {% for item in blogs[:20] %}
+                        <div class="card item-card search-target" data-search="{{ (item.title ~ ' ' ~ item.description ~ ' ' ~ item.categories|join(' '))|lower }}">
+                            <div class="card-header">
+                                <span class="badge-score {% if item.signal_score >= 70 %}hot{% elif item.signal_score >= 40 %}watch{% else %}interesting{% endif %}">{{ item.signal_score }}</span>
+                                <span class="badge-source source-blogs">News</span>
+                            </div>
+                            <div class="card-title">{{ item.title }}</div>
+                            <div class="card-desc">{{ item.description|default('')|slice(0, 120) }}{% if item.description and item.description|length > 120 %}...{% endif %}</div>
+                            <div class="card-meta-row">
+                                <span>{{ item.source }}</span>
+                                <span>{{ item.published }}</span>
+                            </div>
+                            <div class="card-tags">
+                                {% for cat in item.categories[:3] %}<span class="tag">{{ cat }}</span>{% endfor %}
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <a href="{{ item.url }}" target="_blank" class="btn btn-small">Read</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Local Lab Tab -->
+                <div id="local" class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Local Lab</h2>
+                    </div>
+                    <div class="card-grid">
+                        {% for repo in local_items %}
+                        <div class="card item-card search-target" data-search="{{ (repo.title ~ ' ' ~ repo.description ~ ' ' ~ repo.language)|lower }}">
+                            <div class="card-header">
+                                <span class="badge-score {% if repo.signal_score >= 80 %}hot{% elif repo.signal_score >= 60 %}watch{% else %}interesting{% endif %}">{{ repo.signal_score }}</span>
+                                <span class="badge-source source-github">GitHub</span>
+                            </div>
+                            <div class="card-title">{{ repo.title }}</div>
+                            <div class="card-desc">{{ repo.description }}</div>
+                            <div class="card-meta-row">
+                                <span class="badge-pi pi-{{ repo.pi_suitability }}">Pi: {{ repo.pi_suitability }}</span>
+                                <span>{{ repo.stars }} stars</span>
+                                <span>{{ repo.language }}</span>
+                            </div>
+                            <div class="command-box">git clone {{ repo.url }}</div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn btn-small action-save" onclick='saveItem({{ {"url": repo.url, "title": repo.title, "source": repo.source, "source_type": "github", "category": repo.categories[0] if repo.categories else "", "signal_score": repo.signal_score}|tojson }}, this)'>{{ 'Saved' if repo.url in saved_urls else 'Save' }}</button>
+                                    <a href="{{ repo.url }}" target="_blank" class="btn btn-small">Open</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Saved Tab -->
+                <div id="saved" class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Saved Intelligence</h2>
+                        <div class="saved-filters">
+                            <button class="filter-btn active" onclick="filterSaved('all', this)">All</button>
+                            <button class="filter-btn" onclick="filterSaved('to_read', this)">To Read</button>
+                            <button class="filter-btn" onclick="filterSaved('to_test', this)">To Test</button>
+                            <button class="filter-btn" onclick="filterSaved('testing', this)">Testing</button>
+                            <button class="filter-btn" onclick="filterSaved('useful', this)">Useful</button>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-board">
+{% for group in saved_groups %}
+                        <div class="kanban-column" data-status="{{ group.key }}">
+                            <div class="kanban-header">
+                                <span class="kanban-title">{{ group.label }}</span>
+                                {% set cnt = namespace(value=0) %}
+                                {% for item in group.group_entries %}
+                                    {% set cnt.value = cnt.value + 1 %}
+                                {% endfor %}
+                                <span class="kanban-count">{{ cnt.value }}</span>
+                            </div>
+                            <div class="kanban-cards">
+                                {% for item in group.group_entries %}
+                                <div class="card saved-card search-target" data-status="{{ item.status }}" data-search="{{ (item.title ~ ' ' ~ item.notes ~ ' ' ~ item.tags|join(' '))|lower }}">
+                                    <div class="saved-header">
+                                        <span class="badge-source">{{ item.source_type or item.source or 'link' }}</span>
+                                        <span class="status-pill status-{{ item.status }}">{{ item.status }}</span>
+                                    </div>
+                                    <div class="saved-title">{{ item.title }}</div>
+                                    {% if item.notes %}<div class="saved-notes">{{ item.notes }}</div>{% endif %}
+                                    <div class="saved-meta">Saved: {{ item.created_display }}</div>
+                                    {% if item.url %}<a href="{{ item.url }}" target="_blank" class="saved-url">{{ item.url|truncate(50) }}</a>{% endif %}
+                                    <div class="saved-editor">
+                                        <select class="status-select" onchange="updateStatus({{ item.id }}, this.value)">
+                                            <option value="to_read" {% if item.status == 'to_read' %}selected{% endif %}>to_read</option>
+                                            <option value="to_test" {% if item.status == 'to_test' %}selected{% endif %}>to_test</option>
+                                            <option value="testing" {% if item.status == 'testing' %}selected{% endif %}>testing</option>
+                                            <option value="useful" {% if item.status == 'useful' %}selected{% endif %}>useful</option>
+                                            <option value="discarded" {% if item.status == 'discarded' %}selected{% endif %}>discarded</option>
+                                        </select>
+                                        <textarea class="saved-textarea" placeholder="Notes">{{ item.notes }}</textarea>
+                                        <input class="saved-input" type="text" placeholder="tag1, tag2" value="{{ item.tags|join(', ') }}">
+                                    </div>
+                                    <div class="saved-actions">
+                                        <button class="btn btn-small" onclick="updateNotes({{ item.id }}, this.closest('.saved-card').querySelector('.saved-textarea').value, this.closest('.saved-card').querySelector('.saved-input').value)">Save</button>
+                                        <button class="btn btn-small action-ignore" onclick="deleteItem({{ item.id }}, this)">Remove</button>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Trends Tab -->
+                <div id="trends" class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Trends</h2>
+                    </div>
+                    <div class="trends-grid">
+                        <div class="card">
+                            <h3>Rising Topics</h3>
+                            <div class="trend-list">
+                                {% for kw in trending_keywords[:5] %}
+                                <div class="trend-item rising">+ {{ kw.keyword }} <span class="trend-count">{{ kw.count }}</span></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3>Cooling Topics</h3>
+                            <div class="trend-list">
+                                <div class="trend-item cooling">- CV Models</div>
+                                <div class="trend-item cooling">- Traditional ML</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div id="settings" class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Settings</h2>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="card settings-card">
+                            <h3>Theme</h3>
+                            <div class="setting-row">
+                                <label>Current Theme</label>
+                                <button class="btn btn-small" onclick="toggleTheme()">Toggle Theme</button>
+                            </div>
+                        </div>
+                        <div class="card settings-card">
+                            <h3>Focus Areas</h3>
+                            <div class="setting-row">
+                                <span>Agentic AI, Coding agents, Local LLMs, Ollama, Raspberry Pi AI</span>
+                            </div>
+                        </div>
+                        <div class="card settings-card">
+                            <h3>Data Refresh</h3>
+                            <div class="setting-row">
+                                <button class="btn btn-primary" onclick="refreshNow(this)">Refresh Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+    <div id="digest-modal" class="digest-modal" onclick="closeDigest(event)">
+        <div class="digest-panel">
+            <div class="digest-panel-head">
+                <div class="digest-title">Today's Digest</div>
+                <div class="digest-actions">
+                    <button class="btn btn-small" onclick="copyDigest()">Copy</button>
+                    <button class="btn btn-small" onclick="closeDigest()">Close</button>
+                </div>
+            </div>
+            <pre id="digest-content" class="digest-content"></pre>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId, btn) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            if (btn) btn.classList.add('active');
+            document.getElementById('page-title').textContent = document.querySelector('#' + tabId + ' .section-title')?.textContent || tabId;
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+
+        function toggleView(tab, view, btn) {
+            document.getElementById(tab + '-card-view').style.display = view === 'card' ? 'grid' : 'none';
+            document.getElementById(tab + '-table-view').style.display = view === 'table' ? 'block' : 'none';
+            btn.parentElement.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function searchCards(query) {
+            const q = query.toLowerCase().trim();
+            document.querySelectorAll('.search-target').forEach(card => {
+                const text = (card.dataset.search || card.textContent || '').toLowerCase();
+                card.style.display = !q || text.includes(q) ? 'block' : 'none';
+            });
+        }
+
+        function setCardFilter(mode, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('#feed .search-target').forEach(card => {
+                const label = (card.dataset.scoreLabel || '').toLowerCase();
+                card.style.display = mode === 'all' || label.includes(mode) ? 'block' : 'none';
+            });
+        }
+
+        function filterSaved(status, btn) {
+            if (btn) {
+                btn.parentElement.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+            document.querySelectorAll('#saved .saved-card').forEach(card => {
+                card.style.display = status === 'all' || card.dataset.status === status ? 'flex' : 'none';
+            });
+        }
+
+        function refreshNow(button) {
+            if (button) { button.disabled = true; button.textContent = 'Refreshing...'; }
+            fetch('/api/refresh', { method: 'POST' }).then(r => r.json()).then(d => {
+                if (d.status === 'ok') window.location.reload();
+                else { if (button) { button.disabled = false; button.textContent = 'Refresh Now'; } }
+            }).catch(() => { if (button) { button.disabled = false; button.textContent = 'Refresh Now'; } });
+        }
+
+        function openDigest() {
+            fetch('/api/digest').then(r => r.json()).then(d => {
+                if (d.error) { alert(d.error); return; }
+                document.getElementById('digest-content').textContent = d.digest || '';
+                document.getElementById('digest-modal').classList.add('open');
+            });
+        }
+
+        function closeDigest(e) {
+            if (!e || e.target.id === 'digest-modal') document.getElementById('digest-modal').classList.remove('open');
+        }
+
+        function copyDigest() {
+            navigator.clipboard.writeText(document.getElementById('digest-content').textContent);
+            showToast('Copied', 'Digest copied to clipboard.');
+        }
+
+        function saveItem(item, btn) {
+            fetch('/api/save', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(item)
+            }).then(r => r.json()).then(d => {
+                if (d.success) {
+                    btn.textContent = 'Saved';
+                    btn.disabled = true;
+                    showToast('Saved', d.message || 'Item saved to board.');
+                }
+            });
+        }
+
+        function ignoreItem(item, btn) {
+            fetch('/api/ignore', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(item)
+            }).then(r => r.json()).then(d => {
+                if (d.success) { btn.closest('.item-card').style.display = 'none'; showToast('Ignored', 'Item hidden.'); }
+            });
+        }
+
+        function trackItem(item, btn) {
+            fetch('/api/track', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(item)
+            }).then(r => r.json()).then(d => {
+                if (d.success) { btn.textContent = 'Tracked'; btn.disabled = true; showToast('Tracking', d.message); }
+            });
+        }
+
+        function deleteItem(id, btn) {
+            fetch('/api/saved/' + id, {method: 'DELETE'}).then(r => r.json()).then(d => {
+                if (d.success) { btn.closest('.saved-card').remove(); showToast('Removed', 'Item removed.'); }
+            });
+        }
+
+        function updateStatus(id, status) {
+            fetch('/api/saved/' + id + '/status', {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({status})
+            }).then(r => r.json()).then(d => {
+                if (d.success) showToast('Updated', 'Status changed to ' + status);
+            });
+        }
+
+        function updateNotes(id, notes, tags) {
+            fetch('/api/saved/' + id + '/notes', {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({notes, tags: tags.split(',').map(t => t.trim()).filter(Boolean)})
+            }).then(r => r.json()).then(d => {
+                if (d.success) showToast('Saved', 'Notes updated.');
+            });
+        }
+
+        function showToast(title, message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = '<div class="toast-title">' + title + '</div><div class="toast-copy">' + message + '</div>';
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3200);
+        }
+
+        // Init theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>

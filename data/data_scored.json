@@ -1,0 +1,2970 @@
+{
+  "last_updated": "2026-04-28T12:57:46.424069",
+  "scored_at": "2026-04-28T12:58:49.308516",
+  "github": [
+    {
+      "source": "GitHub Trending",
+      "title": "Alishahryar1/free-claude-code",
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "description": "Use claude-code for free in the terminal, VSCode extension or via discord like openclaw",
+      "stars": "16,941",
+      "language": "Python",
+      "signal_score": 36,
+      "score_label": "Low Priority",
+      "score_reason": "popular+AI boost",
+      "action": "ignore",
+      "categories": [
+        "model",
+        "regulation",
+        "coding"
+      ],
+      "agentic_relevance": 15,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 80,
+        "growth": 47,
+        "agentic": 15,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 20,
+        "developer_productivity": 11,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "stars": "34,413",
+      "language": "Shell",
+      "signal_score": 43,
+      "score_label": "Interesting",
+      "score_reason": "popular+AI boost",
+      "action": "read",
+      "categories": [
+        "model"
+      ],
+      "agentic_relevance": 0,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 80,
+        "growth": 40,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 20,
+        "developer_productivity": 2,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "Z4nzu/hackingtool",
+      "url": "https://github.com/Z4nzu/hackingtool",
+      "description": "ALL IN ONE Hacking Tool For Hackers",
+      "stars": "67,707",
+      "language": "Python",
+      "signal_score": 28,
+      "score_label": "Low Priority",
+      "score_reason": "popular",
+      "action": "ignore",
+      "categories": [
+        "general"
+      ],
+      "agentic_relevance": 15,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 100,
+        "growth": 57,
+        "agentic": 15,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 20,
+        "developer_productivity": 9,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "forrestchang/andrej-karpathy-skills",
+      "url": "https://github.com/forrestchang/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "stars": "95,857",
+      "language": "",
+      "signal_score": 48,
+      "score_label": "Interesting",
+      "score_reason": "popular+AI boost",
+      "action": "read",
+      "categories": [
+        "model",
+        "coding"
+      ],
+      "agentic_relevance": 0,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 100,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 12.0,
+        "pi_suitability": 20,
+        "developer_productivity": 6,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "zilliztech/claude-context",
+      "url": "https://github.com/zilliztech/claude-context",
+      "description": "Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
+      "stars": "10,004",
+      "language": "TypeScript",
+      "signal_score": 48,
+      "score_label": "Interesting",
+      "score_reason": "popular+AI boost",
+      "action": "read",
+      "categories": [
+        "model",
+        "agent",
+        "coding"
+      ],
+      "agentic_relevance": 30,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 80,
+        "growth": 55,
+        "agentic": 30,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 20,
+        "developer_productivity": 19,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "Fincept-Corporation/FinceptTerminal",
+      "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
+      "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+      "stars": "16,770",
+      "language": "Python",
+      "signal_score": 27,
+      "score_label": "Low Priority",
+      "score_reason": "popular",
+      "action": "ignore",
+      "categories": [
+        "research"
+      ],
+      "agentic_relevance": 30,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 80,
+        "growth": 55,
+        "agentic": 30,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 20,
+        "developer_productivity": 17,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "AIDC-AI/Pixelle-Video",
+      "url": "https://github.com/AIDC-AI/Pixelle-Video",
+      "description": "\ud83d\ude80 AI \u5168\u81ea\u52a8\u77ed\u89c6\u9891\u5f15\u64ce | AI Fully Automated Short Video Engine",
+      "stars": "7,218",
+      "language": "Python",
+      "signal_score": 31,
+      "score_label": "Low Priority",
+      "score_reason": "popular+AI boost",
+      "action": "ignore",
+      "categories": [
+        "general"
+      ],
+      "agentic_relevance": 0,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 60,
+        "growth": 30,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 20,
+        "developer_productivity": 4,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "Anil-matcha/Open-Generative-AI",
+      "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+      "description": "Uncensored, open-source alternative to Higgsfield AI, Freepik AI, Krea AI, Openart AI \u2014 Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+      "stars": "9,511",
+      "language": "JavaScript",
+      "signal_score": 45,
+      "score_label": "Interesting",
+      "score_reason": "popular+AI boost",
+      "action": "read",
+      "categories": [
+        "model",
+        "open-source",
+        "local"
+      ],
+      "agentic_relevance": 0,
+      "local_ai_relevance": 15,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 60,
+        "growth": 30,
+        "agentic": 0,
+        "local": 15,
+        "relevance": 16.0,
+        "pi_suitability": 20,
+        "developer_productivity": 8,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "lsdefine/GenericAgent",
+      "url": "https://github.com/lsdefine/GenericAgent",
+      "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
+      "stars": "7,924",
+      "language": "Python",
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "score_reason": "popular+AI boost",
+      "action": "ignore",
+      "categories": [
+        "agent"
+      ],
+      "agentic_relevance": 15,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 60,
+        "growth": 37,
+        "agentic": 15,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 20,
+        "developer_productivity": 9,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "HKUDS/RAG-Anything",
+      "url": "https://github.com/HKUDS/RAG-Anything",
+      "description": "\"RAG-Anything: All-in-One RAG Framework\"",
+      "stars": "19,176",
+      "language": "Python",
+      "signal_score": 25,
+      "score_label": "Low Priority",
+      "score_reason": "popular",
+      "action": "ignore",
+      "categories": [
+        "general"
+      ],
+      "agentic_relevance": 0,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 80,
+        "growth": 40,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 12.0,
+        "pi_suitability": 20,
+        "developer_productivity": 6,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "Tracer-Cloud/opensre",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "Build your own AI SRE agents. The open source toolkit for the AI era \u2728",
+      "stars": "3,701",
+      "language": "Python",
+      "signal_score": 45,
+      "score_label": "Interesting",
+      "score_reason": "AI boost",
+      "action": "read",
+      "categories": [
+        "agent",
+        "open-source",
+        "infrastructure"
+      ],
+      "agentic_relevance": 30,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 40,
+        "growth": 35,
+        "agentic": 30,
+        "local": 0,
+        "relevance": 16.0,
+        "pi_suitability": 20,
+        "developer_productivity": 23,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "CJackHwang/ds2api",
+      "url": "https://github.com/CJackHwang/ds2api",
+      "description": "Deepseek to API: A lightweight, high-performance full-stack middleware converting client protocols to universal APIs. Supports multi-account rotation, compiled binaries, Vercel Serverless, and Docker. Compatible with Google, Claude, and OpenAI API formats.",
+      "stars": "2,127",
+      "language": "Go",
+      "signal_score": 68,
+      "score_label": "Worth Watching",
+      "score_reason": "AI boost",
+      "action": "save",
+      "categories": [
+        "model",
+        "infrastructure"
+      ],
+      "agentic_relevance": 15,
+      "local_ai_relevance": 30,
+      "pi_suitability": "yes",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 40,
+        "growth": 27,
+        "agentic": 15,
+        "local": 30,
+        "relevance": 24.0,
+        "pi_suitability": 50,
+        "developer_productivity": 19,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "GyulyVGC/sniffnet",
+      "url": "https://github.com/GyulyVGC/sniffnet",
+      "description": "Comfortably monitor your Internet traffic \ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
+      "stars": "36,672",
+      "language": "Rust",
+      "signal_score": 22,
+      "score_label": "Low Priority",
+      "score_reason": "popular",
+      "action": "ignore",
+      "categories": [
+        "general"
+      ],
+      "agentic_relevance": 0,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 80,
+        "growth": 40,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 0,
+        "trust": 80
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "title": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "stars": "25,042",
+      "language": "Shell",
+      "signal_score": 49,
+      "score_label": "Interesting",
+      "score_reason": "popular+AI boost",
+      "action": "read",
+      "categories": [
+        "agent",
+        "product",
+        "coding"
+      ],
+      "agentic_relevance": 15,
+      "local_ai_relevance": 0,
+      "pi_suitability": "no",
+      "installation_complexity": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 80,
+        "growth": 47,
+        "agentic": 15,
+        "local": 0,
+        "relevance": 16.0,
+        "pi_suitability": 20,
+        "developer_productivity": 15,
+        "trust": 80
+      }
+    }
+  ],
+  "huggingface": [
+    {
+      "source": "HuggingFace",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+      "downloads": 216610403,
+      "likes": 4729,
+      "signal_score": 40,
+      "score_label": "Interesting",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 100,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 216,610,403 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "Qwen/Qwen3-VL-2B-Instruct",
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct",
+      "downloads": 165732702,
+      "likes": 377,
+      "signal_score": 40,
+      "score_label": "Interesting",
+      "action": "read",
+      "categories": [
+        "model"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": true,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 100,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 165,732,702 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "google-bert/bert-base-uncased",
+      "url": "https://huggingface.co/google-bert/bert-base-uncased",
+      "downloads": 58054642,
+      "likes": 2640,
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 58,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 58,054,642 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "google/electra-base-discriminator",
+      "url": "https://huggingface.co/google/electra-base-discriminator",
+      "downloads": 50000400,
+      "likes": 100,
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 50,000,400 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "url": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "downloads": 39731414,
+      "likes": 1209,
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 39,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 39,731,414 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "sentence-transformers/all-mpnet-base-v2",
+      "url": "https://huggingface.co/sentence-transformers/all-mpnet-base-v2",
+      "downloads": 34961406,
+      "likes": 1284,
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 34,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 34,961,406 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "url": "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2",
+      "downloads": 31222158,
+      "likes": 224,
+      "signal_score": 43,
+      "score_label": "Interesting",
+      "action": "read",
+      "categories": [
+        "coding"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": true,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 31,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 20,
+        "developer_productivity": 80,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 31,222,158 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "BAAI/bge-small-en-v1.5",
+      "url": "https://huggingface.co/BAAI/bge-small-en-v1.5",
+      "downloads": 27862875,
+      "likes": 446,
+      "signal_score": 33,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 27,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 27,862,875 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "Falconsai/nsfw_image_detection",
+      "url": "https://huggingface.co/Falconsai/nsfw_image_detection",
+      "downloads": 27138429,
+      "likes": 1062,
+      "signal_score": 0,
+      "action": "ignore",
+      "categories": []
+    },
+    {
+      "source": "HuggingFace",
+      "title": "openai/clip-vit-large-patch14",
+      "url": "https://huggingface.co/openai/clip-vit-large-patch14",
+      "downloads": 23935990,
+      "likes": 1997,
+      "signal_score": 36,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 23,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 12.0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 23,935,990 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "amazon/chronos-2",
+      "url": "https://huggingface.co/amazon/chronos-2",
+      "downloads": 20936701,
+      "likes": 251,
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 20,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 20,936,701 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "openai/clip-vit-base-patch32",
+      "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+      "downloads": 20367876,
+      "likes": 922,
+      "signal_score": 36,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 20,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 12.0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 20,367,876 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "timm/mobilenetv3_small_100.lamb_in1k",
+      "url": "https://huggingface.co/timm/mobilenetv3_small_100.lamb_in1k",
+      "downloads": 19367625,
+      "likes": 64,
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 19,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 19,367,625 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "BAAI/bge-m3",
+      "url": "https://huggingface.co/BAAI/bge-m3",
+      "downloads": 18654488,
+      "likes": 2956,
+      "signal_score": 33,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "general"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 18,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 18,654,488 downloads"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "Qwen/Qwen3-0.6B",
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B",
+      "downloads": 18497766,
+      "likes": 1214,
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "read",
+      "categories": [
+        "model"
+      ],
+      "is_local_compatible": false,
+      "is_coding_model": false,
+      "is_small": false,
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 18,
+        "growth": 100,
+        "agentic": 10,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 20,
+        "developer_productivity": 50,
+        "trust": 80
+      },
+      "score_reason": "Popular model with 18,497,766 downloads"
+    }
+  ],
+  "youtube": [
+    {
+      "source": "YouTube - Matt Wolfe",
+      "title": "AI News: The Biggest Leap We've Seen This Year!",
+      "url": "https://youtube.com/watch?v=jsP-eRriC0k",
+      "description": "Discover...",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "medium priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Matt Wolfe",
+      "title": "AI News: Huge Updates From Anthropic, OpenAI and Google",
+      "url": "https://youtube.com/watch?v=bIrzOQtnp8w",
+      "description": "",
+      "type": "video",
+      "signal_score": 6,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 12.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "medium priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Matt Wolfe",
+      "title": "The Truth About My Channel (And How Much $$ I Make)",
+      "url": "https://youtube.com/watch?v=ncVQneK7FlE",
+      "description": "Discover More:...",
+      "type": "video",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Two Minute Papers",
+      "title": "NVIDIA's New AI Broke My Brain",
+      "url": "https://youtube.com/watch?v=Xf_v62TQOx4",
+      "description": "",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Two Minute Papers",
+      "title": "DeepMind\u2019s New AI: A Gift To Humanity",
+      "url": "https://youtube.com/watch?v=Sk9tvyRSCgY",
+      "description": "",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Two Minute Papers",
+      "title": "Anthropic\u2019s New AI Solves Problems\u2026By Cheating",
+      "url": "https://youtube.com/watch?v=Ersv1ogj7Jo",
+      "description": "",
+      "type": "video",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Tina Huang",
+      "title": "Local AI Agents In 26 Minutes",
+      "url": "https://youtube.com/watch?v=M-NTwkM3VwM",
+      "description": "In this video I explain the fundamentals of local AI agents!",
+      "type": "video",
+      "signal_score": 10,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "agent",
+        "local"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 15,
+        "local": 0,
+        "relevance": 12.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Tina Huang",
+      "title": "Every Way To Run Open Source AI Models",
+      "url": "https://youtube.com/watch?v=vehYE1DfkZg",
+      "description": "In this video I explain every way to run open source AI models!",
+      "type": "video",
+      "signal_score": 6,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "model",
+        "open-source"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 12.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Tina Huang",
+      "title": "My Favourite AI Workflow Nobody Talks About",
+      "url": "https://youtube.com/watch?v=kKG5MDF_234",
+      "description": "",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "agent"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Matthew Berman",
+      "title": "Robin Barnes & Matthew Berman - Summertime / Smooth (The Porch Chronicles)",
+      "url": "https://youtube.com/watch?v=sY6aClejCcw",
+      "description": "New Orleans Jazz Vocalist Robin Barnes and Guitar / Songwriter Matthew Berman perform a medley of \"Summertime\" and \"Smooth\" from a NOLA porch.",
+      "type": "video",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Matthew Berman",
+      "title": "Sazerac - Antoine's Cocktail",
+      "url": "https://youtube.com/watch?v=Xm7tBQP8lCY",
+      "description": "Directed / Filmed / Edited: Matthew...",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - Matthew Berman",
+      "title": "Sazerac - \"Kentucky Morning Fizz\"",
+      "url": "https://youtube.com/watch?v=Hvirsnbogwg",
+      "description": "Directed / Filmed / Edited: Matthew...",
+      "type": "video",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - OpenAI",
+      "title": "Ritu vs Case Files | With ChatGPT",
+      "url": "https://youtube.com/watch?v=2TGHO4apQ5I",
+      "description": "",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - OpenAI",
+      "title": "Reddys vs Retirement | With ChatGPT",
+      "url": "https://youtube.com/watch?v=fuO669ienMY",
+      "description": "",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - OpenAI",
+      "title": "Introducing GPT-5.5 with Perplexity",
+      "url": "https://youtube.com/watch?v=GNEbX8EvDlg",
+      "description": "",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - DeepLearningAI",
+      "title": "\ud83d\udcc9 Turn your multimodal data into something you can actually query",
+      "url": "https://youtube.com/watch?v=XteKUbuvNrI",
+      "description": "",
+      "type": "video",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - DeepLearningAI",
+      "title": "New course! Spec-Driven Development",
+      "url": "https://youtube.com/watch?v=bJ8F43j1Fqw",
+      "description": "",
+      "type": "video",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - DeepLearningAI",
+      "title": "Boost LLM performance: New SGLang course is live \ud83d\ude80",
+      "url": "https://youtube.com/watch?v=YW6oWf4xoGk",
+      "description": "",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - AI Explained",
+      "title": "I Built an App Using Only English\u2026 Thanks to Base44 \ud83e\udd2f",
+      "url": "https://youtube.com/watch?v=2K0tie1pZ5M",
+      "description": "In this video, I explore Base44.com, an AI natural language app that allows users to build functional apps quickly without any coding experience. I hi",
+      "type": "video",
+      "signal_score": 6,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "coding"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 15,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - AI Explained",
+      "title": "I Tried Zoom AI So You Don\u2019t Have To",
+      "url": "https://youtube.com/watch?v=49AkHYiikoA",
+      "description": "Take a quick look at what Zoom\u2019s new AI Companion can actually do. No fluff, no hype, just a real walkthrough of the features, how they work, and what",
+      "type": "video",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    },
+    {
+      "source": "YouTube - AI Explained",
+      "title": "AI Agents. Work Ends. Everything Changes.",
+      "url": "https://youtube.com/watch?v=gIM5FODuCgc",
+      "description": "",
+      "type": "video",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "watch_priority": "low",
+      "categories": [
+        "agent"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 0,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "low priority video on relevant topic"
+    }
+  ],
+  "blogs": [
+    {
+      "source": "OpenAI",
+      "title": "OpenAI available at FedRAMP Moderate",
+      "url": "https://openai.com/index/openai-available-at-fedramp-moderate",
+      "published": "Mon, 27 Apr 2026 14:00:00 GMT",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "OpenAI",
+      "title": "The next phase of the Microsoft OpenAI partnership",
+      "url": "https://openai.com/index/next-phase-of-microsoft-partnership",
+      "published": "Mon, 27 Apr 2026 06:00:00 GMT",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "OpenAI",
+      "title": "An open-source spec for orchestration: Symphony",
+      "url": "https://openai.com/index/open-source-codex-orchestration-symphony",
+      "published": "Mon, 27 Apr 2026 00:00:00 GMT",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "OpenAI",
+      "title": "Choco automates food distribution with AI agents",
+      "url": "https://openai.com/index/choco",
+      "published": "Mon, 27 Apr 2026 00:00:00 GMT",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "agent"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "OpenAI",
+      "title": "Our principles",
+      "url": "https://openai.com/index/our-principles",
+      "published": "Sun, 26 Apr 2026 16:00:00 GMT",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "Google AI",
+      "title": "Join the new AI Agents Vibe Coding Course from Google and Kaggle",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/",
+      "published": "Mon, 27 Apr 2026 13:00:00 +0000",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "agent",
+        "coding"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "Google AI",
+      "title": "8 Gemini tips for organizing your space (and life)",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/",
+      "published": "Fri, 24 Apr 2026 19:00:00 +0000",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "Google AI",
+      "title": "Here\u2019s how our TPUs power increasingly demanding AI workloads.",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/what-is-a-tpu/",
+      "published": "Thu, 23 Apr 2026 12:00:00 +0000",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "Google AI",
+      "title": "Elevating Austria: Google invests in its first data center in the Alps.",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-data-center-austria/",
+      "published": "Thu, 23 Apr 2026 09:00:00 +0000",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "Google AI",
+      "title": "We're launching two specialized TPUs for the agentic era.",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/",
+      "published": "Wed, 22 Apr 2026 12:00:00 +0000",
+      "type": "blog",
+      "signal_score": 42,
+      "score_label": "Interesting",
+      "action": "save",
+      "impact": "critical",
+      "categories": [
+        "agent",
+        "product"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "critical impact news on AI topic"
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "Otter\u2019s new feature lets users search across their enterprise tools",
+      "url": "https://techcrunch.com/2026/04/28/otters-new-feature-lets-users-search-across-their-enterprise-tools/",
+      "published": "Tue, 28 Apr 2026 12:00:00 +0000",
+      "type": "blog",
+      "signal_score": 22,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "high",
+      "categories": [
+        "product"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "high impact news on AI topic"
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "OpenAI ends Microsoft legal peril over its $50B Amazon deal",
+      "url": "https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/",
+      "published": "Mon, 27 Apr 2026 17:40:38 +0000",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "DeepMind\u2019s David Silver just raised $1.1B to build an AI that learns without human data",
+      "url": "https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/",
+      "published": "Mon, 27 Apr 2026 17:24:21 +0000",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "Investors back Skye\u2019s AI home screen app for iPhone ahead of launch",
+      "url": "https://techcrunch.com/2026/04/27/investors-back-skye-signull-labs-ai-home-screen-app-for-iphone-ahead-of-launch/",
+      "published": "Mon, 27 Apr 2026 16:13:02 +0000",
+      "type": "blog",
+      "signal_score": 42,
+      "score_label": "Interesting",
+      "action": "save",
+      "impact": "critical",
+      "categories": [
+        "product"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "critical impact news on AI topic"
+    },
+    {
+      "source": "TechCrunch AI",
+      "title": "China blocks Meta\u2019s $2B Manus deal after months-long probe",
+      "url": "https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/",
+      "published": "Mon, 27 Apr 2026 13:16:55 +0000",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "The Verge AI",
+      "title": "Google and Pentagon reportedly agree on deal for \u2018any lawful\u2019 use of AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal",
+      "published": "2026-04-28T07:09:32-04:00",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "regulation",
+        "coding"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "The Verge AI",
+      "title": "Attack of the killer script kiddies",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/915660/mythos-script-kiddies-hackers-attack-cybersecurity-ai",
+      "published": "2026-04-28T07:00:00-04:00",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "The Verge AI",
+      "title": "Jury selection in Musk v. Altman: \u2018People don\u2019t like him\u2019",
+      "url": "https://www.theverge.com/tech/919469/elon-musk-dont-like",
+      "published": "2026-04-27T23:39:33-04:00",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "The Verge AI",
+      "title": "Google is testing AI chatbot search for YouTube",
+      "url": "https://www.theverge.com/streaming/919441/google-ask-youtube-ai-chatbot-search",
+      "published": "2026-04-27T20:01:54-04:00",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "The Verge AI",
+      "title": "Canonical lays out a plan for AI in Ubuntu Linux",
+      "url": "https://www.theverge.com/tech/919411/canonical-ubuntu-linux-ai-features",
+      "published": "2026-04-27T16:47:45-04:00",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "MIT Tech Review",
+      "title": "The Download: Musk and Altman\u2019s legal showdown, and AI\u2019s profit problem",
+      "url": "https://www.technologyreview.com/2026/04/28/1136479/the-download-musk-altman-openai-trial-ai-profit-problem/",
+      "published": "Tue, 28 Apr 2026 12:10:00 +0000",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "MIT Tech Review",
+      "title": "Elon Musk and Sam Altman are going to court over OpenAI\u2019s future",
+      "url": "https://www.technologyreview.com/2026/04/27/1136466/elon-musk-and-sam-altman-are-going-to-court-over-openais-future/",
+      "published": "Mon, 27 Apr 2026 22:52:57 +0000",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "MIT Tech Review",
+      "title": "The missing step between hype and profit",
+      "url": "https://www.technologyreview.com/2026/04/27/1136456/the-missing-step-between-hype-and-profit/",
+      "published": "Mon, 27 Apr 2026 16:13:41 +0000",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "MIT Tech Review",
+      "title": "Rebuilding the data stack for AI",
+      "url": "https://www.technologyreview.com/2026/04/27/1136322/rebuilding-the-data-stack-for-ai/",
+      "published": "Mon, 27 Apr 2026 13:00:00 +0000",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "MIT Tech Review",
+      "title": "The Download: DeepSeek\u2019s latest AI breakthrough, and the race to build world models",
+      "url": "https://www.technologyreview.com/2026/04/27/1136438/the-download-deepseek-v4-ai-world-models/",
+      "published": "Mon, 27 Apr 2026 12:10:00 +0000",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "Adaptive Ultrasound Imaging with Physics-Informed NV-Raw2Insights-US AI",
+      "url": "https://huggingface.co/blog/nvidia/raw2insights-adaptive-ultrasound-imaging",
+      "published": "Tue, 28 Apr 2026 00:28:13 GMT",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "How to build scalable web apps with OpenAI's Privacy Filter",
+      "url": "https://huggingface.co/blog/openai-privacy-filter-web-apps",
+      "published": "Mon, 27 Apr 2026 00:00:00 GMT",
+      "type": "blog",
+      "signal_score": 4,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "DeepSeek-V4: a million-token context that agents can actually use",
+      "url": "https://huggingface.co/blog/deepseekv4",
+      "published": "Fri, 24 Apr 2026 00:00:00 GMT",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "model",
+        "agent"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "How to Use Transformers.js in a Chrome Extension",
+      "url": "https://huggingface.co/blog/transformersjs-chrome-extension",
+      "published": "Thu, 23 Apr 2026 00:00:00 GMT",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "HuggingFace",
+      "title": "QIMMA \u0642\u0650\u0645\u0651\u0629 \u26f0: A Quality-First Arabic LLM Leaderboard",
+      "url": "https://huggingface.co/blog/tiiuae/qimma-arabic-leaderboard",
+      "published": "Tue, 21 Apr 2026 10:09:58 GMT",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "NVIDIA Dev Blog",
+      "title": "Build with DeepSeek V4 Using NVIDIA Blackwell and GPU-Accelerated Endpoints",
+      "url": "https://developer.nvidia.com/blog/build-with-deepseek-v4-using-nvidia-blackwell-and-gpu-accelerated-endpoints/",
+      "published": "2026-04-24T23:29:56Z",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "model"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "NVIDIA Dev Blog",
+      "title": "Federated Learning Without the Refactoring Overhead Using NVIDIA FLARE",
+      "url": "https://developer.nvidia.com/blog/federated-learning-without-the-refactoring-overhead-using-nvidia-flare/",
+      "published": "2026-04-24T15:00:00Z",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "NVIDIA Dev Blog",
+      "title": "Winning a Kaggle Competition with Generative AI\u2013Assisted Coding",
+      "url": "https://developer.nvidia.com/blog/winning-a-kaggle-competition-with-generative-ai-assisted-coding/",
+      "published": "2026-04-23T20:15:02Z",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "coding"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "NVIDIA Dev Blog",
+      "title": "Simplify Sparse Deep Learning with Universal Sparse Tensor in nvmath-python",
+      "url": "https://developer.nvidia.com/blog/simplify-sparse-deep-learning-with-universal-sparse-tensor-in-nvmath-python/",
+      "published": "2026-04-22T23:50:10Z",
+      "type": "blog",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "NVIDIA Dev Blog",
+      "title": "Scaling the AI-Ready Data Center with NVIDIA RTX PRO 4500 Blackwell Server Edition and NVIDIA vGPU 20",
+      "url": "https://developer.nvidia.com/blog/scaling-the-ai-ready-data-center-with-nvidia-rtx-pro-4500-blackwell-server-edition-and-nvidia-vgpu-20/",
+      "published": "2026-04-22T20:30:00Z",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "general"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    },
+    {
+      "source": "The Verge AI",
+      "title": "Google and Pentagon reportedly agree deal for \u2018any lawful\u2019 use of AI",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/919494/google-pentagon-classified-ai-deal",
+      "published": "2026-04-28T07:09:32-04:00",
+      "type": "blog",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "impact": "medium",
+      "categories": [
+        "regulation",
+        "coding"
+      ],
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 50,
+        "growth": 50,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 70
+      },
+      "score_reason": "medium impact news on AI topic"
+    }
+  ],
+  "papers": [
+    {
+      "source": "ArXiv AI",
+      "title": "Personalized Worked Example Generation from Student Code Submissions using Pattern-based Knowledge Components",
+      "url": "https://arxiv.org/abs/2604.24758v1",
+      "published": "2026-04-27T17:56:56Z",
+      "arxiv_id": "2604.24758v1",
+      "authors": [
+        "Griffin Pitts",
+        "Muntasir Hoq",
+        "Peter Brusilovsky",
+        "Narges Norouzi",
+        "Arto Hellas"
+      ],
+      "abstract": "Adaptive programming practice often relies on fixed libraries of worked examples and practice problems, which require substantial authoring effort and may not correspond well to the logical errors and partial solutions students produce while writing code. As a result, students may receive learning content that does not directly address the concepts they are working to understand, while instructors must either invest additional effort in expanding content libraries or accept a coarse level of per",
+      "categories": [
+        "coding",
+        "local"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24758v1.pdf",
+      "signal_score": 32,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": true,
+      "practical_usefulness": "medium",
+      "reproducibility_estimate": "high",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "ignore - Has code - medium usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Learning to Think from Multiple Thinkers",
+      "url": "https://arxiv.org/abs/2604.24737v1",
+      "published": "2026-04-27T17:43:44Z",
+      "arxiv_id": "2604.24737v1",
+      "authors": [
+        "Nirmit Joshi",
+        "Roey Magen",
+        "Nathan Srebro",
+        "Nikolaos Tsilivis",
+        "Gal Vardi"
+      ],
+      "abstract": "We study learning with Chain-of-Thought (CoT) supervision from multiple thinkers, all of whom provide correct but possibly systematically different solutions, e.g., step-by-step solutions to math problems written by different thinkers, or step-by-step execution traces of different programs solving the same problem.\n  We consider classes that are computationally easy to learn using CoT supervision from a single thinker, but hard to learn with only end-result supervision, i.e., without CoT (Joshi ",
+      "categories": [
+        "general"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24737v1.pdf",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Learning to Rotate: Temporal and Semantic Rotary Encoding for Sequential Modeling",
+      "url": "https://arxiv.org/abs/2604.24717v1",
+      "published": "2026-04-27T17:26:15Z",
+      "arxiv_id": "2604.24717v1",
+      "authors": [
+        "Hailing Cheng",
+        "Daqi Sun",
+        "Xinyu Lu"
+      ],
+      "abstract": "Every Transformer architecture dedicates enormous capacity to learning rich representations in semantic embedding space -- yet the rotation manifold acted upon by Rotary Positional Embeddings (RoPE) has been treated as a fixed, hand-crafted structure, populated only by discrete ordinal indices. We argue that this rotation space is a largely overlooked second dimension of expressivity in the attention mechanism, one whose systematic exploration may open a new door for attention-based architecture",
+      "categories": [
+        "model",
+        "coding"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24717v1.pdf",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Case-Specific Rubrics for Clinical AI Evaluation: Methodology, Validation, and LLM-Clinician Agreement Across 823 Encounters",
+      "url": "https://arxiv.org/abs/2604.24710v1",
+      "published": "2026-04-27T17:17:56Z",
+      "arxiv_id": "2604.24710v1",
+      "authors": [
+        "Aaryan Shah",
+        "Andrew Hines",
+        "Alexia Downs",
+        "Denis Bajet",
+        "Paulius Mui"
+      ],
+      "abstract": "Objective. Clinical AI documentation systems require evaluation methodologies that are clinically valid, economically viable, and sensitive to iterative changes. Methods requiring expert review per scoring instance are too slow and expensive for safe, iterative deployment. We present a case-specific, clinician-authored rubric methodology for clinical AI evaluation and examine whether LLM-generated rubrics can approximate clinician agreement.\n  Materials and Methods. Twenty clinicians authored 1,",
+      "categories": [
+        "model",
+        "research"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24710v1.pdf",
+      "signal_score": 11,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 16.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Scalable Hyperparameter-Divergent Ensemble Training with Automatic Learning Rate Exploration for Large Models",
+      "url": "https://arxiv.org/abs/2604.24708v1",
+      "published": "2026-04-27T17:17:28Z",
+      "arxiv_id": "2604.24708v1",
+      "authors": [
+        "Hailing Cheng",
+        "Tao Huang",
+        "Chen Zhu",
+        "Antonio Alonso"
+      ],
+      "abstract": "Training large neural networks with data-parallel stochastic gradient descent allocates N GPU replicas to compute effectively identical updates -- a practice that leaves the rich space of learning rate configurations entirely unexplored during training. We propose Hyperparameter-Divergent Ensemble Training (HDET), a method that repurposes these replicas for simultaneous learning rate exploration at negligible communication overhead. HDET operates in alternating phases: a fan-out stage in which r",
+      "categories": [
+        "model"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24708v1.pdf",
+      "signal_score": 5,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Defective Task Descriptions in LLM-Based Code Generation: Detection and Analysis",
+      "url": "https://arxiv.org/abs/2604.24703v1",
+      "published": "2026-04-27T17:07:08Z",
+      "arxiv_id": "2604.24703v1",
+      "authors": [
+        "Amal Akli",
+        "Mike Papadakis",
+        "Maxime Cordy",
+        "Yves Le Traon"
+      ],
+      "abstract": "Large language models are widely used for code generation, yet they rely on an implicit assumption that the task descriptions are sufficiently detailed and well-formed. However, in practice, users may provide defective descriptions, which can have a strong effect on code correctness. To address this issue, we develop SpecValidator, a lightweight classifier based on a small model that has been parameter-efficiently finetuned, to automatically detect task description defects. We evaluate SpecValid",
+      "categories": [
+        "model",
+        "coding"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24703v1.pdf",
+      "signal_score": 41,
+      "score_label": "Interesting",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": true,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "high",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 16.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "ignore - Has code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Green Shielding: A User-Centric Approach Towards Trustworthy AI",
+      "url": "https://arxiv.org/abs/2604.24700v1",
+      "published": "2026-04-27T17:04:17Z",
+      "arxiv_id": "2604.24700v1",
+      "authors": [
+        "Aaron J. Li",
+        "Nicolas Sanchez",
+        "Hao Huang",
+        "Ruijiang Dong",
+        "Jaskaran Bains"
+      ],
+      "abstract": "Large language models (LLMs) are increasingly deployed, yet their outputs can be highly sensitive to routine, non-adversarial variation in how users phrase queries, a gap not well addressed by existing red-teaming efforts. We propose Green Shielding, a user-centric agenda for building evidence-backed deployment guidance by characterizing how benign input variation shifts model behavior. We operationalize this agenda through the CUE criteria: benchmarks with authentic Context, reference standards",
+      "categories": [
+        "general"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24700v1.pdf",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Can Current Agents Close the Discovery-to-Application Gap? A Case Study in Minecraft",
+      "url": "https://arxiv.org/abs/2604.24697v1",
+      "published": "2026-04-27T16:58:04Z",
+      "arxiv_id": "2604.24697v1",
+      "authors": [
+        "Zhou Ziheng",
+        "Huacong Tang",
+        "Jinyuan Zhang",
+        "Haowei Lin",
+        "Bangcheng Yang"
+      ],
+      "abstract": "Discovering causal regularities and applying them to build functional systems--the discovery-to-application loop--is a hallmark of general intelligence, yet evaluating this capacity has been hindered by the vast complexity gap between scientific discovery and real-world engineering. We introduce SciCrafter, a Minecraft-based benchmark that operationalizes this loop through parameterized redstone circuit tasks. Agents must ignite lamps in specified patterns (e.g., simultaneously or in timed seque",
+      "categories": [
+        "agent"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24697v1.pdf",
+      "signal_score": 2,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 4.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Governing What You Cannot Observe: Adaptive Runtime Governance for Autonomous AI Agents",
+      "url": "https://arxiv.org/abs/2604.24686v1",
+      "published": "2026-04-27T16:46:15Z",
+      "arxiv_id": "2604.24686v1",
+      "authors": [
+        "German Marin",
+        "Jatin Chaudhary"
+      ],
+      "abstract": "Autonomous AI agents can remain fully authorized and still become unsafe as behavior drifts, adversaries adapt, and decision patterns shift without any code change. We propose the \\textbf{Informational Viability Principle}: governing an agent reduces to estimating a bound on unobserved risk $\\hat{B}(x) = U(x) + SB(x) + RG(x)$ and allowing an action only when its capacity $S(x)$ exceeds $\\hat{B}(x)$ by a safety margin. The \\textbf{Agent Viability Framework}, grounded in Aubin's viability theory, ",
+      "categories": [
+        "agent"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24686v1.pdf",
+      "signal_score": 35,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": true,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "high",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "ignore - Has code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Leveraging LLMs for Multi-File DSL Code Generation: An Industrial Case Study",
+      "url": "https://arxiv.org/abs/2604.24678v1",
+      "published": "2026-04-27T16:38:01Z",
+      "arxiv_id": "2604.24678v1",
+      "authors": [
+        "Sivajeet Chand",
+        "Kevin Nguyen",
+        "Peter Kuntz",
+        "Alexander Pretschner"
+      ],
+      "abstract": "Large language models (LLMs) perform strongly on general-purpose code generation, yet their applicability to enterprise domain-specific languages (DSLs) remains underexplored, especially for repository-scale change generation spanning multiple files and folder structures from a single natural-language (NL) instruction. We report an industrial case study at BMW that adapts code-oriented LLMs to generate and modify project-root DSL artifacts for an Xtext-based DSL that drives downstream Java/TypeS",
+      "categories": [
+        "model",
+        "coding"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24678v1.pdf",
+      "signal_score": 49,
+      "score_label": "Interesting",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": true,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "high",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 28.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "ignore - Has code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "The Price of Agreement: Measuring LLM Sycophancy in Agentic Financial Applications",
+      "url": "https://arxiv.org/abs/2604.24668v1",
+      "published": "2026-04-27T16:27:10Z",
+      "arxiv_id": "2604.24668v1",
+      "authors": [
+        "Zhenyu Zhao",
+        "Aparna Balagopalan",
+        "Adi Agrawal",
+        "Dilshoda Yergasheva",
+        "Waseem Alshikh"
+      ],
+      "abstract": "Given the increased use of LLMs in financial systems today, it becomes important to evaluate the safety and robustness of such systems. One failure mode that LLMs frequently display in general domain settings is that of sycophancy. That is, models prioritize agreement with expressed user beliefs over correctness, leading to decreased accuracy and trust. In this work, we focus on evaluating sycophancy that LLMs display in agentic financial tasks. Our findings are three-fold: first, we find the mo",
+      "categories": [
+        "model",
+        "agent"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24668v1.pdf",
+      "signal_score": 5,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Benchmarking Source-Sensitive Reasoning in Turkish: Humans and LLMs under Evidential Trust Manipulation",
+      "url": "https://arxiv.org/abs/2604.24665v1",
+      "published": "2026-04-27T16:26:20Z",
+      "arxiv_id": "2604.24665v1",
+      "authors": [
+        "Sercan Karaka\u015f",
+        "Yusuf \u015eim\u015fek"
+      ],
+      "abstract": "This paper investigates whether source trustworthiness shapes Turkish evidential morphology and whether large language models (LLMs) track this sensitivity. We study the past-domain contrast between -DI and -mIs in controlled cloze contexts where the information source is overtly external, while only its perceived reliability is manipulated (High-Trust vs. Low-Trust). In a human production experiment, native speakers of Turkish show a robust trust effect: High-Trust contexts yield relatively mor",
+      "categories": [
+        "model",
+        "research"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24665v1.pdf",
+      "signal_score": 11,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 16.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "Information bottleneck for learning the phase space of dynamics from high-dimensional experimental data",
+      "url": "https://arxiv.org/abs/2604.24662v1",
+      "published": "2026-04-27T16:24:45Z",
+      "arxiv_id": "2604.24662v1",
+      "authors": [
+        "K. Michael Martini",
+        "Eslam Abdelaleem",
+        "Paarth Gulati",
+        "Ilya Nemenman"
+      ],
+      "abstract": "Identifying the dynamical state variables of a system from high-dimensional observations is a central problem across physical sciences. The challenge is that the state variables are not directly observable and must be inferred from raw high-dimensional data without supervision. Here we introduce DySIB (Dynamical Symmetric Information Bottleneck) as a method to learn low-dimensional representations of time-series data by maximizing predictive mutual information between past and future observation",
+      "categories": [
+        "general"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24662v1.pdf",
+      "signal_score": 0,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "AgentWard: A Lifecycle Security Architecture for Autonomous AI Agents",
+      "url": "https://arxiv.org/abs/2604.24657v1",
+      "published": "2026-04-27T16:22:27Z",
+      "arxiv_id": "2604.24657v1",
+      "authors": [
+        "Yixiang Zhang",
+        "Xinhao Deng",
+        "Jiaqing Wu",
+        "Yue Xiao",
+        "Ke Xu"
+      ],
+      "abstract": "Autonomous AI agents extend large language models into full runtime systems that load skills, ingest external content, maintain memory, plan multi-step actions, and invoke privileged tools. In such systems, security failures rarely remain confined to a single interface; instead, they can propagate across initialization, input processing, memory, decision-making, and execution, often becoming apparent only when harmful effects materialize in the environment. This paper presents AgentWard, a lifec",
+      "categories": [
+        "agent",
+        "safety"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24657v1.pdf",
+      "signal_score": 5,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": false,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "medium",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 10,
+        "trust": 80
+      },
+      "score_reason": "ignore - No code - high usefulness"
+    },
+    {
+      "source": "ArXiv AI",
+      "title": "DepthKV: Layer-Dependent KV Cache Pruning for Long-Context LLM Inference",
+      "url": "https://arxiv.org/abs/2604.24647v1",
+      "published": "2026-04-27T16:15:37Z",
+      "arxiv_id": "2604.24647v1",
+      "authors": [
+        "Zahra Dehghanighobadi",
+        "Asja Fischer"
+      ],
+      "abstract": "Long-context reasoning is a critical capability of large language models (LLMs), enabling applications such as long-document understanding, summarization, and code generation. However, efficient autoregressive inference relies on the key-value (KV) cache, whose memory footprint grows linearly with sequence length, leading to a major memory bottleneck. To mitigate this overhead, KV cache pruning methods discard cached tokens with low attention scores during inference. Most existing methods apply ",
+      "categories": [
+        "model",
+        "infrastructure"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2604.24647v1.pdf",
+      "signal_score": 35,
+      "score_label": "Low Priority",
+      "action": "ignore",
+      "recommendation": "ignore",
+      "has_code": true,
+      "practical_usefulness": "high",
+      "reproducibility_estimate": "high",
+      "score_breakdown": {
+        "recency": 50,
+        "popularity": 30,
+        "growth": 30,
+        "agentic": 20,
+        "local": 0,
+        "relevance": 8.0,
+        "pi_suitability": 0,
+        "developer_productivity": 30,
+        "trust": 80
+      },
+      "score_reason": "ignore - Has code - high usefulness"
+    }
+  ],
+  "executive_brief": {
+    "date": "2026-04-28",
+    "generated_at": "2026-04-28T12:58:49.319369",
+    "items": [
+      {
+        "title": "CJackHwang/ds2api",
+        "signal_score": 68,
+        "action": "save",
+        "categories": [
+          "model",
+          "infrastructure"
+        ],
+        "recommendation": "Save for research later",
+        "source": "github",
+        "url": "https://github.com/CJackHwang/ds2api"
+      },
+      {
+        "title": "addyosmani/agent-skills",
+        "signal_score": 49,
+        "action": "read",
+        "categories": [
+          "agent",
+          "product",
+          "coding"
+        ],
+        "recommendation": "Read for context",
+        "source": "github",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "title": "Leveraging LLMs for Multi-File DSL Code Generation: An Industrial Case Study",
+        "signal_score": 49,
+        "action": "ignore",
+        "categories": [
+          "model",
+          "coding"
+        ],
+        "recommendation": "Monitor",
+        "source": "papers",
+        "url": "https://arxiv.org/abs/2604.24678v1"
+      },
+      {
+        "title": "forrestchang/andrej-karpathy-skills",
+        "signal_score": 48,
+        "action": "read",
+        "categories": [
+          "model",
+          "coding"
+        ],
+        "recommendation": "Read for context",
+        "source": "github",
+        "url": "https://github.com/forrestchang/andrej-karpathy-skills"
+      },
+      {
+        "title": "zilliztech/claude-context",
+        "signal_score": 48,
+        "action": "read",
+        "categories": [
+          "model",
+          "agent",
+          "coding"
+        ],
+        "recommendation": "Read for context",
+        "source": "github",
+        "url": "https://github.com/zilliztech/claude-context"
+      }
+    ],
+    "total_high_signal": 14
+  }
+}

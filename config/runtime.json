@@ -1,0 +1,45 @@
+{
+  "refresh": {
+    "data_fetch_interval_hours": 12,
+    "email_send_time": "06:00",
+    "timezone": "UTC"
+  },
+  "cache": {
+    "cache_duration_hours": 12,
+    "max_items_per_source": 50,
+    "keep_daily_digests_days": 30
+  },
+  "llm": {
+    "enabled": true,
+    "ollama_base_url": "http://localhost:11434",
+    "model_name": "minimax-m2.5:cloud",
+    "fallback_to_rule_based": true,
+    "timeout_seconds": 20,
+    "max_tokens": 150
+  },
+  "display": {
+    "items_per_tab": 20,
+    "show_signal_scores": true,
+    "show_badges": true,
+    "dark_mode": true
+  },
+  "features": {
+    "executive_brief": true,
+    "saved_intelligence": true,
+    "daily_digest": true,
+    "trend_radar": true,
+    "local_lab_tab": true,
+    "agentic_workflows_tab": true
+  },
+  "pi_optimization": {
+    "max_concurrent_fetches": 3,
+    "fetch_timeout_seconds": 30,
+    "use_cache_on_failure": true,
+    "lightweight_models_only": false
+  },
+  "storage": {
+    "database_path": "./data/intelligence.db",
+    "digests_path": "./data/digests",
+    "data_file_path": "./data/data.json"
+  }
+}
