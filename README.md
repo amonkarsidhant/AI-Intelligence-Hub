@@ -35,13 +35,35 @@ AI Intelligence Hub focuses on:
 
 ## Screenshots
 
-Screenshot placeholders live in `docs/screenshots/`.
+### Walkthrough
 
-- `overview-light.png`
-- `feed-cards.png`
-- `saved-board.png`
-- `trends.png`
-- `mobile-overview.png`
+![AI Intelligence Hub Walkthrough](docs/screenshots/demo-walkthrough.gif)
+
+### Product Views
+
+#### Overview
+
+![Overview](docs/screenshots/overview-light.png)
+
+#### Feed
+
+![Feed Cards](docs/screenshots/feed-cards.png)
+
+#### Saved Workflow Board
+
+![Saved Board](docs/screenshots/saved-board.png)
+
+#### Trends
+
+![Trends](docs/screenshots/trends.png)
+
+#### Mobile Overview
+
+![Mobile Overview](docs/screenshots/mobile-overview.png)
+
+### How It Works
+
+![How It Works](docs/screenshots/how-it-works.svg)
 
 ## Data Sources
 

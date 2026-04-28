@@ -1,0 +1,55 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="32" fill="#F8FAFC"/>
+  <rect x="56" y="48" width="1168" height="624" rx="28" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+
+  <text x="88" y="108" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">AI Intelligence Hub</text>
+  <text x="88" y="144" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="18">How the open-source dashboard turns noisy AI feeds into a daily decision cockpit</text>
+
+  <rect x="88" y="198" width="250" height="352" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="116" y="238" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">1. Collect</text>
+  <text x="116" y="274" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="16">Curated external sources are fetched on demand and on schedule.</text>
+  <rect x="116" y="314" width="194" height="44" rx="14" fill="#DBEAFE"/>
+  <text x="136" y="342" fill="#1E40AF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">GitHub trending</text>
+  <rect x="116" y="372" width="194" height="44" rx="14" fill="#E0F2FE"/>
+  <text x="136" y="400" fill="#0369A1" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Hugging Face</text>
+  <rect x="116" y="430" width="194" height="44" rx="14" fill="#ECFCCB"/>
+  <text x="136" y="458" fill="#3F6212" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Research + news</text>
+  <text x="116" y="516" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="15">Includes AI blogs, YouTube, and arXiv.</text>
+
+  <rect x="386" y="198" width="250" height="352" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="414" y="238" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">2. Score</text>
+  <text x="414" y="274" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="16">Each item is ranked for signal, relevance, freshness, and actionability.</text>
+  <circle cx="512" cy="368" r="72" fill="#1E40AF" fill-opacity="0.08"/>
+  <circle cx="512" cy="368" r="56" fill="#FFFFFF" stroke="#1E40AF" stroke-width="10"/>
+  <text x="478" y="378" fill="#1E40AF" font-family="Fira Code, monospace" font-size="28" font-weight="700">84</text>
+  <text x="442" y="476" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="15">Signal score + reason + recommended action</text>
+
+  <rect x="684" y="198" width="250" height="352" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="712" y="238" fill="#1E3A8A" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">3. Present</text>
+  <text x="712" y="274" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="16">The dashboard surfaces a trust-first overview and live operational views.</text>
+  <rect x="712" y="316" width="194" height="52" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="734" y="348" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Overview</text>
+  <rect x="712" y="382" width="194" height="52" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="734" y="414" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Feed + Tables</text>
+  <rect x="712" y="448" width="194" height="52" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="734" y="480" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Saved Workflow</text>
+
+  <rect x="982" y="198" width="194" height="352" rx="24" fill="#FFF7ED" stroke="#F59E0B"/>
+  <text x="1010" y="238" fill="#9A3412" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">4. Act</text>
+  <text x="1010" y="274" fill="#9A3412" font-family="Inter, Arial, sans-serif" font-size="16">Use the board, digest, and refresh loop to turn awareness into action.</text>
+  <rect x="1010" y="328" width="138" height="44" rx="14" fill="#FFFFFF"/>
+  <text x="1044" y="356" fill="#9A3412" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Save</text>
+  <rect x="1010" y="388" width="138" height="44" rx="14" fill="#FFFFFF"/>
+  <text x="1042" y="416" fill="#9A3412" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Digest</text>
+  <rect x="1010" y="448" width="138" height="44" rx="14" fill="#FFFFFF"/>
+  <text x="1022" y="476" fill="#9A3412" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Refresh Now</text>
+
+  <path d="M338 374H386" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M636 374H684" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M934 374H982" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M374 362L386 374L374 386" stroke="#94A3B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M672 362L684 374L672 386" stroke="#94A3B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M970 362L982 374L970 386" stroke="#94A3B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="88" y="622" fill="#64748B" font-family="Inter, Arial, sans-serif" font-size="15">Open source, MIT licensed, Flask + SQLite + JSON + vanilla JS.</text>
+</svg>

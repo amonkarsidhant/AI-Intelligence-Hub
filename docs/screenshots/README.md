@@ -9,6 +9,8 @@ Suggested assets:
 - `saved-board.png`
 - `trends.png`
 - `mobile-overview.png`
+- `demo-walkthrough.gif`
+- `how-it-works.svg`
 
 Recommended capture width:
 
