@@ -897,7 +897,43 @@ def api_get_saved():
     if not intel_db:
         return jsonify({"items": []})
     
-    return jsonify({"items": intel_db.get_saved_items()})
+    status_filter = request.args.get("status")
+    items = intel_db.get_saved_items()
+    
+    if status_filter and status_filter != "all":
+        items = [i for i in items if i.get("status") == status_filter]
+    
+    return jsonify({"items": items})
+
+
+@app.route("/api/saved/export", methods=["GET"])
+def api_export_saved():
+    """Export saved items as JSON or markdown"""
+    if not intel_db:
+        return jsonify({"items": []})
+    
+    fmt = request.args.get("format", "json")
+    status_filter = request.args.get("status")
+    items = intel_db.get_saved_items()
+    
+    if status_filter and status_filter != "all":
+        items = [i for i in items if i.get("status") == status_filter]
+    
+    if fmt == "markdown" or fmt == "md":
+        md = "# Saved Intelligence\n\n"
+        for item in items:
+            status_emoji = {"to_read": "📖", "to_test": "🧪", "testing": "⚙️", "useful": "✅", "discarded": "❌"}.get(item.get("status", ""), "📌")
+            md += f"## {status_emoji} {item.get('title', 'Untitled')}\n\n"
+            md += f"- URL: {item.get('url', 'N/A')}\n"
+            md += f"- Status: {item.get('status', 'unknown')}\n"
+            if item.get("notes"):
+                md += f"- Notes: {item['notes']}\n"
+            if item.get("tags"):
+                md += f"- Tags: {', '.join(item['tags'])}\n"
+            md += "\n"
+        return md, 200, {"Content-Type": "text/markdown"}
+    
+    return jsonify({"items": items})
 
 
 @app.route("/api/ignore", methods=["POST"])

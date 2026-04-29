@@ -38,7 +38,124 @@ function checkBlockers() {
 // Run on load
 setTimeout(checkBlockers, 1000);
 
+function toggleSidebar() {
+    var sidebar = document.querySelector('.sidebar');
+    var toggle = document.querySelector('.sidebar-toggle');
+    if (sidebar && toggle) {
+        sidebar.classList.toggle('open');
+        toggle.classList.toggle('open');
+    }
+}
+
+function toggleTheme() {
+    var body = document.body;
+    var current = body.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    
+    var btn = document.querySelector('.theme-toggle-btn');
+    if (btn) {
+        btn.textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+}
+
+async function exportSaved(format) {
+    try {
+        var url = '/api/saved/export?format=' + format;
+        var res = await fetch(url);
+        if (format === 'markdown') {
+            var text = await res.text();
+            var blob = new Blob([text], {type: 'text/markdown'});
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'saved-intelligence.md';
+            a.click();
+        } else {
+            var data = await res.json();
+            var json = JSON.stringify(data.items, null, 2);
+            var blob = new Blob([json], {type: 'application/json'});
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'saved-intelligence.json';
+            a.click();
+        }
+    } catch (e) {
+        console.error('Export failed:', e);
+    }
+}
+
+let savedCheckboxes = [];
+function toggleAllSaved(checked) {
+    document.querySelectorAll('.saved-card input[type="checkbox"]').forEach(cb => {
+        cb.checked = checked;
+    });
+}
+
+function toggleSavedBulkBar() {
+    var checked = document.querySelectorAll('.saved-card input[type="checkbox"]:checked').length;
+    var bar = document.querySelector('.saved-bulk-actions');
+    if (bar) {
+        bar.style.display = checked > 0 ? 'flex' : 'none';
+    }
+}
+
+async function bulkUpdateStatus(status) {
+    var checked = document.querySelectorAll('.saved-card input[type="checkbox"]:checked');
+    for (var cb of checked) {
+        var card = cb.closest('.saved-card');
+        var id = card.dataset.id;
+        if (id) {
+            await fetch('/api/saved/' + id + '/status', {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({status: status})
+            });
+        }
+    }
+    location.reload();
+}
+
+async function bulkDelete() {
+    var checked = document.querySelectorAll('.saved-card input[type="checkbox"]:checked');
+    if (!confirm('Delete ' + checked.length + ' items?')) return;
+    for (var cb of checked) {
+        var card = cb.closest('.saved-card');
+        var id = card.dataset.id;
+        if (id) {
+            await fetch('/api/saved/' + id, {method: 'DELETE'});
+        }
+    }
+    location.reload();
+}
+
+// Close sidebar when clicking outside on mobile
 document.addEventListener('click', function(e) {
+    var sidebar = document.querySelector('.sidebar');
+    var toggle = document.querySelector('.sidebar-toggle');
+    if (sidebar && sidebar.classList.contains('open')) {
+        if (!sidebar.contains(e.target) && (!toggle || !toggle.contains(e.target))) {
+            sidebar.classList.remove('open');
+            toggle.classList.remove('open');
+        }
+    }
+    
+    const btn = e.target.closest('.nav-btn[data-tab]');
+    if (btn) {
+        const tabId = btn.getAttribute('data-tab');
+        console.log('Tab clicked:', tabId);
+        showTab(tabId, btn);
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var sidebar = document.querySelector('.sidebar');
+        if (sidebar && sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+            var toggle = document.querySelector('.sidebar-toggle');
+            if (toggle) toggle.classList.remove('open');
+        }
+    }
+});
     const btn = e.target.closest('.nav-btn[data-tab]');
     if (btn) {
         const tabId = btn.getAttribute('data-tab');

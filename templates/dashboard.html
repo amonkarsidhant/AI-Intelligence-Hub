@@ -10,9 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 </head>
 <body>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
     <div class="app-shell">
         <aside class="sidebar">
             <div class="logo">DailyDex <span class="variant-badge" id="current-variant">{{ variant_info.name }}</span></div>
+            <button class="theme-toggle-btn" onclick="toggleTheme()">🌙</button>
             <div class="variant-switcher">
                 <select id="variant-select" onchange="switchVariant(this.value)">
                     {% for v in variant_info.available_variants %}
@@ -625,6 +627,17 @@
                 <div id="saved" class="section">
                     <div class="section-header">
                         <h2 class="section-title">Saved Intelligence</h2>
+                        <div class="saved-bulk-actions" style="display:none">
+                            <label><input type="checkbox" onchange="toggleAllSaved(this.checked)"> Select All</label>
+                            <button class="btn btn-small" onclick="bulkUpdateStatus('to_read')">Mark To Read</button>
+                            <button class="btn btn-small" onclick="bulkUpdateStatus('to_test')">Mark To Test</button>
+                            <button class="btn btn-small" onclick="bulkUpdateStatus('useful')">Mark Useful</button>
+                            <button class="btn btn-small btn-danger" onclick="bulkDelete()">Delete</button>
+                        </div>
+                        <div class="saved-actions-bar">
+                            <button class="btn btn-small" onclick="exportSaved('json')">Export JSON</button>
+                            <button class="btn btn-small" onclick="exportSaved('markdown')">Export Markdown</button>
+                        </div>
                         <div class="saved-filters">
                             <button class="filter-btn active" onclick="filterSaved('all', this)">All</button>
                             <button class="filter-btn" onclick="filterSaved('to_read', this)">To Read</button>
@@ -647,8 +660,9 @@
                             </div>
                             <div class="kanban-cards">
                                 {% for item in group.group_entries %}
-                                <div class="card saved-card search-target" data-status="{{ item.status }}" data-search="{{ (item.title ~ ' ' ~ item.notes ~ ' ' ~ item.tags|join(' '))|lower }}">
+                                <div class="card saved-card search-target" data-id="{{ item.id }}" data-status="{{ item.status }}" data-search="{{ (item.title ~ ' ' ~ item.notes ~ ' ' ~ item.tags|join(' '))|lower }}">
                                     <div class="saved-header">
+                                        <input type="checkbox" onchange="toggleSavedBulkBar()">
                                         <span class="badge-source">{{ item.source_type or item.source or 'link' }}</span>
                                         <span class="status-pill status-{{ item.status }}">{{ item.status }}</span>
                                     </div>
