@@ -16,8 +16,8 @@ Open `http://localhost:8888`.
 ## Docker Setup
 
 ```bash
-docker build -t ai-dashboard .
-docker run -d --name ai-dashboard \
+docker build -t dailydex .
+docker run -d --name dailydex \
   -p 8888:8888 \
   -v $(pwd)/data:/app/data \
   -e DATA_DIR=/app/data \
@@ -26,7 +26,7 @@ docker run -d --name ai-dashboard \
   -e DIGEST_DIR=/app/data/digests \
   -e DATA_FILE=/app/data/data.json \
   -e SCORED_DATA_FILE=/app/data/data_scored.json \
-  ai-dashboard
+  dailydex
 ```
 
 ## Development Workflow

@@ -95,7 +95,7 @@ def test_save_ignore_and_digest_routes(client, app_env):
     assert digest_response.status_code == 200
     payload = digest_response.get_json()
     digest = payload["digest"]
-    assert "AI Intelligence" in digest
+    assert "DailyDex" in digest
     assert payload["path"].endswith(".md")
     digest_path = app_env["digest_dir"] / f"{datetime.now().strftime('%Y-%m-%d')}.md"
     assert digest_path.exists()

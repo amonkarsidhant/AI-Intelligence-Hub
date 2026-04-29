@@ -34,7 +34,7 @@ def test_dashboard_contains_real_action_wiring(client, app_env):
     assert "<script src=\"/static/app.js\"></script>" in html
     assert "Daily Trust State" in html
     assert "Refresh Now" in html
-    assert "Open Today" not in html and "Daily Digest" in html
+    assert "Open Today" not in html and "DailyDex Digest" in html
     assert "nav-btn" in html
     assert "search-target" in html
     assert "action-save" in html or "action-save" in html
