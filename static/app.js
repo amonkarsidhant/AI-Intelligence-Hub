@@ -13,6 +13,11 @@ const LIVE_POLL_VISIBLE_MS = 60000;
 const LIVE_POLL_HIDDEN_MS = 180000;
 const VIEW_TABS = ['github', 'models', 'research'];
 
+window.onerror = function(msg, url, line, col, error) {
+    console.error('JS Error:', msg, 'line:', line);
+    return false;
+};
+
 async function switchVariant(variantKey) {
     try {
         const res = await fetch('/api/variant', {
