@@ -67,7 +67,7 @@
 - [ ] Does the search filter work efficiently?
 
 ### Overall Experience
-- [ ] Does the dashboard feel like a modern AI intelligence cockpit?
+- [ ] Does the dashboard feel like a modern DailyDex cockpit?
 - [ ] Is the interface clean and not cluttered?
 - [ ] Are empty states calm and useful?
 - [ ] Does the UI breathe (not too dense)?

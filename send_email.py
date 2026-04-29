@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Email newsletter sender for AI Intelligence Daily."""
+"""Email newsletter sender for DailyDex."""
 
 import json
 import smtplib
@@ -18,7 +18,7 @@ SMTP_PORT = 587
 SMTP_USER = "Pi@homelabdev.space"
 SMTP_PASS = "08June@1992"
 
-FROM_NAME = "AI Intelligence"
+FROM_NAME = "DailyDex"
 FROM_EMAIL = "daily@ai-intel.com"
 TO_EMAIL = "amonkarsidhant@outlook.com"
 
@@ -77,13 +77,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Intelligence Daily</title>
+        <title>DailyDex</title>
 <style>{css}</style>
 </head>
 <body>
 <div class="container">
 <div class="header">
-<h1>AI INTELLIGENCE</h1>
+        <h1>DAILYDEX</h1>
 <p class="date">{datetime.now().strftime("%B %d, %Y")}</p>
 </div>
 
@@ -142,7 +142,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 <div class="footer">
 <p><a href="http://192.168.2.16:8888/">View Web Version</a></p>
-<p style="margin-top:0.75rem;font-size:0.7rem;color:#444">AI Intelligence Daily • Automated Brief</p>
+    <p style="margin-top:0.75rem;font-size:0.7rem;color:#444">DailyDex Daily • Automated Brief</p>
 </div>
 </div>
 </body>

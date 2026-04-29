@@ -1,4 +1,4 @@
-# AI Intelligence Hub
+# DailyDex
 
 ![Version](https://img.shields.io/badge/version-v0.6.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)
@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/status-release%20candidate-f59e0b)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-AI Intelligence Hub is a lightweight open-source dashboard for tracking the AI ecosystem across GitHub, Hugging Face, research, video, and news sources.
+DailyDex is a lightweight open-source dashboard for tracking the AI ecosystem across GitHub, Hugging Face, research, video, and news sources.
 
 It is built for people who want a daily AI signal cockpit instead of a generic RSS reader.
 
@@ -14,7 +14,7 @@ It is built for people who want a daily AI signal cockpit instead of a generic R
 
 Most AI feeds are noisy.
 
-AI Intelligence Hub focuses on:
+DailyDex focuses on:
 
 - high-signal items instead of raw volume
 - source freshness and trust visibility
@@ -37,7 +37,7 @@ AI Intelligence Hub focuses on:
 
 ### Walkthrough
 
-![AI Intelligence Hub Walkthrough](docs/screenshots/demo-walkthrough.gif)
+![DailyDex Walkthrough](docs/screenshots/demo-walkthrough.gif)
 
 ### Product Views
 

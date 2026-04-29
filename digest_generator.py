@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Daily Digest Generator for AI Intelligence Command Center"""
+"""Daily Digest Generator for DailyDex"""
 
 import json
 import os
@@ -56,7 +56,7 @@ class DailyDigestGenerator:
         lines = []
         
         # Header
-        lines.append(f"# AI Intelligence Daily Brief - {date}")
+        lines.append(f"# DailyDex Daily Brief - {date}")
         lines.append("")
         lines.append(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*")
         lines.append("")

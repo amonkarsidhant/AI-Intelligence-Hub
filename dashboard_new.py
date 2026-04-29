@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AI Intelligence Command Center - Flask Dashboard"""
+"""DailyDex - Flask Dashboard"""
 
 import json
 import os

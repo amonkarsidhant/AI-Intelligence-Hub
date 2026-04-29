@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""UX tests for AI Intelligence Command Center using Playwright"""
+"""UX tests for DailyDex using Playwright"""
 
 import pytest
 
@@ -27,7 +27,7 @@ def test_dashboard_loads():
         
         # Check title
         title = page.title()
-        assert "AI Intelligence" in title, f"Title missing 'AI Intelligence': {title}"
+        assert "DailyDex" in title, f"Title missing 'DailyDex': {title}"
         
         # Check header exists
         header = page.locator(".logo")
@@ -212,7 +212,7 @@ def test_api_endpoints():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("AI Intelligence Command Center - UX Tests")
+    print("DailyDex - UX Tests")
     print("=" * 60)
     
     tests = [

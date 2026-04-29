@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Data models for AI Intelligence Command Center - SQLite + JSON storage"""
+"""Data models for DailyDex - SQLite + JSON storage"""
 
 import sqlite3
 import json

@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for contributing to AI Intelligence Hub.
+Thanks for contributing to DailyDex.
 
 ## Local Setup
 

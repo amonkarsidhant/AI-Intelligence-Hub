@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Smoke tests for AI Intelligence Command Center"""
+"""Smoke tests for DailyDex"""
 
 import sys
 import os
@@ -264,7 +264,7 @@ if __name__ == "__main__":
     import json
     
     print("=" * 50)
-    print("AI Intelligence Command Center - Smoke Tests")
+    print("DailyDex - Smoke Tests")
     print("=" * 50)
     
     tests = [

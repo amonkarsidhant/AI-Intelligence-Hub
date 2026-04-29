@@ -11,7 +11,7 @@ HTML = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Intelligence</title>
+    <title>DailyDex</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <script type="module">
       import { prepare, layout } from 'https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/+esm';
@@ -84,7 +84,7 @@ HTML = """<!DOCTYPE html>
 </head>
 <body>
     <header>
-        <div class="logo">AI <span>Intelligence</span></div>
+        <div class="logo">DailyDex</div>
         <div class="tagline">Daily briefing on artificial intelligence</div>
         <div class="meta"><span>Updated {{ last_updated }}</span></div>
     </header>
@@ -204,7 +204,7 @@ HTML = """<!DOCTYPE html>
         </div>
     </main>
     <footer>
-        <p>AI Intelligence - <a href="/admin">Admin</a> - Updated {{ last_updated }}</p>
+        <p>DailyDex - <a href="/admin">Admin</a> - Updated {{ last_updated }}</p>
     </footer>
     <script type="module">
     import { prepare, layout } from 'https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/+esm';
@@ -493,4 +493,4 @@ def admin():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8888)
+    app.run(host="0.0.0.0", port=8889)

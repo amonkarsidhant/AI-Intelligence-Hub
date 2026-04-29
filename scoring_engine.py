@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Signal Scoring Engine for AI Intelligence Command Center"""
+"""Signal Scoring Engine for DailyDex"""
 
 import json
 import re
