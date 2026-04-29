@@ -18,6 +18,26 @@ window.onerror = function(msg, url, line, col, error) {
     return false;
 };
 
+// Check for click-blocking elements
+function checkBlockers() {
+    var navBtn = document.getElementById('nav-feed');
+    if (!navBtn) return;
+    
+    var rect = navBtn.getBoundingClientRect();
+    console.log('nav-feed rect:', rect);
+    console.log('nav-feed offsetParent:', navBtn.offsetParent);
+    console.log('nav-feed parent:', navBtn.parentElement);
+    
+    var el = document.elementFromPoint(rect.left + 10, rect.top + 10);
+    console.log('element at nav-feed:', el);
+    if (el) {
+        console.log('element tag:', el.tagName, 'class:', el.className);
+    }
+}
+
+// Run on load
+setTimeout(checkBlockers, 1000);
+
 document.addEventListener('click', function(e) {
     const btn = e.target.closest('.nav-btn[data-tab]');
     if (btn) {
@@ -27,6 +47,30 @@ document.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
     }
+});
+
+// Attach direct click handlers
+const tabs = ['overview', 'feed', 'github', 'models', 'research', 'videos', 'news', 'local', 'saved', 'trends', 'settings'];
+tabs.forEach(function(tab) {
+    var btn = document.getElementById('nav-' + tab);
+    if (btn) {
+        btn.onclick = function(e) {
+            console.log('Direct click on:', tab);
+            showTab(tab, btn);
+        };
+    }
+});
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    readDashboardState();
+    restoreViewPreferences();
+    restoreTabFromLocation();
+    initCharts();
+    initProgressiveLoading();
+    initEmptyStates();
+    restoreSearchFromLocation();
+    startLiveUpdates();
 });
 
 async function switchVariant(variantKey) {
@@ -1098,42 +1142,52 @@ window.addEventListener('resize', debounce(() => {
 }, 150));
 
 // Original functions
-function showTab(tabId, btn, updateHash = true) {
-    console.log('showTab called:', tabId);
-    if (!tabId) return;
-    
-    const section = document.getElementById(tabId);
-    if (!section) {
-        console.error('Section not found:', tabId);
-        return;
-    }
-    
-    document.querySelectorAll('.section').forEach(s => {
-        s.classList.remove('active');
-        s.style.display = 'none';
-    });
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    
-    section.classList.add('active');
-    section.style.display = 'block';
-    if (btn) btn.classList.add('active');
-    
-    const titleEl = document.getElementById('page-title');
-    if (titleEl) {
-        const sectionTitle = section.querySelector('.section-title');
-        titleEl.textContent = sectionTitle ? sectionTitle.textContent : tabId;
-    }
+function showTab(tabId, btn, updateHash) {
+    try {
+        console.log('showTab called:', tabId);
+        if (!tabId) return;
+        
+        var section = document.getElementById(tabId);
+        if (!section) {
+            console.error('Section not found:', tabId);
+            return;
+        }
+        
+        document.querySelectorAll('.section').forEach(function(s) {
+            s.classList.remove('active');
+            s.style.display = 'none';
+        });
+        document.querySelectorAll('.nav-btn').forEach(function(b) {
+            b.classList.remove('active');
+        });
+        
+        section.classList.add('active');
+        section.style.display = 'block';
+        if (btn) btn.classList.add('active');
+        
+        var titleEl = document.getElementById('page-title');
+        if (titleEl) {
+            var sectionTitle = section.querySelector('.section-title');
+            titleEl.textContent = sectionTitle ? sectionTitle.textContent : tabId;
+        }
 
-    if (tabId === 'trends') {
-        requestAnimationFrame(() => initTrendsCharts());
-    } else {
-        requestAnimationFrame(() => resizeVisibleCharts());
-    }
+        if (tabId === 'trends') {
+            if (typeof initTrendsCharts === 'function') {
+                requestAnimationFrame(function() { initTrendsCharts(); });
+            }
+        } else {
+            if (typeof resizeVisibleCharts === 'function') {
+                requestAnimationFrame(function() { resizeVisibleCharts(); });
+            }
+        }
 
-    if (updateHash) {
-        const url = new URL(window.location.href);
-        url.hash = tabId;
-        history.replaceState({}, '', url);
+        if (updateHash !== false) {
+            var url = new URL(window.location.href);
+            url.hash = tabId;
+            history.replaceState({}, '', url);
+        }
+    } catch (e) {
+        console.error('showTab error:', e);
     }
 }
 
@@ -1163,8 +1217,6 @@ function searchTabCards(tabId, query) {
     document.querySelectorAll(`#${tabId} .search-target`).forEach(card => {
         const text = (card.dataset.search || card.textContent || '').toLowerCase();
         card.style.display = q === '' || text.includes(q) ? 'block' : 'none';
-    });
-}
     });
 }
 
