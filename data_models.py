@@ -346,9 +346,17 @@ class IntelligenceDB:
         for row in rows:
             item = dict(row)
             if item.get("tags"):
-                item["tags"] = json.loads(item["tags"])
+                try:
+                    item["tags"] = json.loads(item["tags"])
+                except Exception:
+                    # Fallback for comma-separated strings
+                    if isinstance(item["tags"], str) and "," in item["tags"]:
+                        item["tags"] = [t.strip() for t in item["tags"].split(",")]
+                    else:
+                        item["tags"] = [item["tags"]] if item["tags"] else []
             else:
                 item["tags"] = []
+                
             if item.get("sources"):
                 try:
                     item["sources"] = json.loads(item["sources"])
@@ -356,6 +364,7 @@ class IntelligenceDB:
                     item["sources"] = [item["sources"]]
             else:
                 item["sources"] = []
+                
             if item.get("outline"):
                 try:
                     item["outline"] = json.loads(item["outline"])

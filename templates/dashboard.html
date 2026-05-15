@@ -404,6 +404,12 @@
                                             <span class="badge-source source-{{ item.source_type }}">{{ item.source_label }}</span>
                                         </div>
                                         <div class="card-title">{{ item.title }}</div>
+                                        {% if item.insight %}
+                                        <div class="card-insight"><strong>Insight:</strong> {{ item.insight }}</div>
+                                        {% endif %}
+                                        {% if item.opening_hook %}
+                                        <div class="card-hook"><strong>Hook:</strong> {{ item.opening_hook }}</div>
+                                        {% endif %}
                                         <div class="card-why-matters"><strong>Why it matters:</strong> {{ item.why_it_matters }}</div>
                                         <div class="card-why-me"><strong>For me:</strong> {{ item.why_it_matters_to_me }}</div>
                                         <div class="card-footer">
