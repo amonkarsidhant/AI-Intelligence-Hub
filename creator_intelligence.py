@@ -364,6 +364,29 @@ def _creator_score(factors: Dict) -> int:
     ))
 
 
+import llm_summary
+
+def enrich_with_llm_intelligence(item: Dict) -> Dict:
+    """Use LLM to generate deep insights, hooks and outlines for high-signal items."""
+    # Only enrich if it has high signal or is specifically requested
+    if item.get("signal_score", 0) < 70 and item.get("creator_score", 0) < 70:
+        return item
+        
+    enrichment = llm_summary.get_item_enrichment(item)
+    
+    # Update item with LLM intelligence
+    item["insight"] = enrichment.get("insight", item.get("insight", ""))
+    item["opening_hook"] = enrichment.get("hooks", [item.get("opening_hook", "")])[0]
+    item["hooks"] = enrichment.get("hooks", [])
+    item["three_key_points"] = enrichment.get("outline", item.get("three_key_points", []))
+    
+    # If it's a very high score, set as idea automatically
+    if item.get("creator_score", 0) >= 85:
+        item["status"] = "idea"
+        item["pipeline_type"] = "creator"
+        
+    return item
+
 def enrich_scored_data_with_creator_fields(scored_data: Dict) -> Dict:
     """Add creator metadata to every scored item."""
     support_map = {}

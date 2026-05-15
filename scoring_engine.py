@@ -51,6 +51,18 @@ SCORING_WEIGHTS = {
 }
 
 
+# Keyword Expansion Dictionary for "Smart Ingestion"
+KEYWORD_EXPANSION = {
+    "agentic AI": ["agent", "autonomous", "workflow", "mcp", "tool calling", "function calling", "orchestration", "swarm", "multi-agent"],
+    "coding agents": ["cursor", "devin", "aider", "swe-bench", "open-interpreter", "code gen", "programming agent", "autocoder"],
+    "open-source LLMs": ["llama", "mistral", "qwen", "deepseek", "phi", "gemma", "falcon", "open weights", "apache", "mit license"],
+    "local LLMs": ["ollama", "lm studio", "llama.cpp", "self-hosted", "offline ai", "private ai", "edge ai"],
+    "Raspberry Pi AI": ["pi 5", "hailo", "coral", "edge tpu", "npu", "low power", "embedded ai", "single board computer"],
+    "RAG": ["vector database", "retrieval", "embeddings", "pinecone", "milvus", "qdrant", "semantic search", "knowledge graph"],
+    "AI infrastructure": ["vllm", "tgi", "tensorrt", "cuda", "gpu", "inference engine", "serving", "deployment", "kubernetes"],
+}
+
+
 class SignalScorer:
     def __init__(self, config: Optional[Dict] = None, variant_info: Optional[Dict] = None):
         self.config = config or {}
@@ -125,23 +137,30 @@ class SignalScorer:
             return 30
     
     def calculate_keyword_match_score(self, text: str) -> float:
-        """Calculate score based on focus area keywords"""
+        """Calculate score based on focus area keywords with Smart Expansion"""
         text_lower = text.lower()
         matches = 0
         
-        # Check exact matches
+        # 1. Check direct matches in focus areas
         for area in self.focus_areas:
-            if area.lower() in text_lower:
-                matches += 1
+            area_lower = area.lower()
+            if area_lower in text_lower:
+                matches += 2.0  # High weight for direct match
+            
+            # 2. Smart Expansion: check related terms for this focus area
+            if area in KEYWORD_EXPANSION:
+                for related in KEYWORD_EXPANSION[area]:
+                    if related.lower() in text_lower:
+                        matches += 1.0  # Medium weight for expanded match
         
-        # Also check partial matches and related terms
-        related_terms = ["ai", "llm", "gpt", "model", "agent", "code", "open", "local", "raspberry", "pi", "docker", "cli", "tool", "automation", "eval", "benchmark", "rag", "embedding", "inference", "serving", "api"]
+        # 3. General AI relevance fallback
+        related_terms = ["ai", "llm", "gpt", "model", "agent", "code", "open", "local", "pi", "docker", "cli", "automation", "eval", "benchmark", "rag", "inference", "api"]
         for term in related_terms:
             if term in text_lower:
-                matches += 0.5
+                matches += 0.2
         
-        # Normalize to 0-100 - more generous
-        return min(100, matches * 8)
+        # Normalize to 0-100
+        return min(100, matches * 10)
     
     def detect_category(self, text: str) -> List[str]:
         """Detect categories based on keywords"""

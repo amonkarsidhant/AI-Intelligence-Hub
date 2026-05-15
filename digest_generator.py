@@ -6,7 +6,8 @@ import os
 from datetime import datetime
 from typing import Dict, List, Any
 from scoring_engine import SignalScorer
-from data_models import IntelligenceJSON
+from data_models import IntelligenceJSON, IntelligenceDB
+import creator_intelligence
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.environ.get("DATA_DIR", os.path.join(BASE_DIR, "data"))
@@ -23,6 +24,7 @@ class DailyDigestGenerator:
         self.config_path = config_path
         self.scorer = self._load_scorer()
         self.json_store = IntelligenceJSON()
+        self.db = IntelligenceDB()
     
     def _load_scorer(self) -> SignalScorer:
         """Load scoring configuration"""
@@ -37,16 +39,29 @@ class DailyDigestGenerator:
         """Generate the daily markdown digest"""
         date = date or datetime.now().strftime("%Y-%m-%d")
         
-        # Score all items
+        # 1. Score all items
         scored_data = self.scorer.score_all_items(data)
         
-        # Generate executive brief
+        # 2. Enrich with Creator Intelligence
+        scored_data = creator_intelligence.enrich_scored_data_with_creator_fields(scored_data)
+        
+        # 3. LLM Enrichment for high-signal items
+        for source_type, items in scored_data.items():
+            if source_type in ["github", "huggingface", "youtube", "blogs", "papers"]:
+                for i in range(len(items)):
+                    # Only enrich top 3 items per source to save tokens/time
+                    if i < 3 and (items[i].get("signal_score", 0) >= 80 or items[i].get("creator_score", 0) >= 80):
+                        items[i] = creator_intelligence.enrich_with_llm_intelligence(items[i])
+                        # Save to database if it's high signal
+                        self.db.save_item({**items[i], "source_type": source_type})
+        
+        # 4. Generate executive brief
         brief = self.scorer.generate_executive_brief(scored_data)
         
-        # Build markdown
+        # 5. Build markdown
         digest = self._build_markdown(date, scored_data, brief)
         
-        # Save digest
+        # 6. Save digest
         self.json_store.save_daily_digest(date, digest)
         
         return digest
